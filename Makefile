@@ -1,4 +1,4 @@
-FILENAME = ./Reports/report_labs
+FILENAME = ./Docs/report_labs
 
 $(FILENAME).pdf: $(FILENAME).tex
 
@@ -16,8 +16,8 @@ $(FILENAME).pdf: $(FILENAME).tex
 	rm -f *.synctex.gz
 
 exams:
-	-pdflatex -interaction=nonstopmode ./Reports/Exams2014-summary.tex
-	-pdflatex -interaction=nonstopmode ./Reports/Exams2014-summary.tex
+	-pdflatex -interaction=nonstopmode ./Docs/Exams2014-summary.tex
+	-pdflatex -interaction=nonstopmode ./Docs/Exams2014-summary.tex
 
 	rm -f *.aux
 	rm -f *.log
