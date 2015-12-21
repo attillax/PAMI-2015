@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt,titlepage]{article} %page properties
+\usepackage[headings]{fullpage} %for fullpage with headings
+\usepackage{fancyhdr} %for headings
+\usepackage{graphicx} %for label
+\usepackage{tabularx} %for fullpage tables
+\usepackage{longtable} %for tables on multiple pages
+\usepackage{hyperref} %for links
+\usepackage{mathtools} %for math symbols
+
+% defining headings
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE,RO]{PAMI 2015-2016 \hfill EXAMS 2014-2015 SUMMARY}
+
+\begin{document}
+	\begin{titlepage}
+		
+		%defining university
+		\begin{center}
+			POLITECNICO DI MILANO --- COMO CAMPUS\\
+			\vspace{10pt}
+			\includegraphics[scale=0.1]{logo-polimi.png}\\
+			\vspace{10pt}
+			PATTERN ANALYSIS AND MACHINE INTELLIGENCE 2015-2016\\
+			prof. Matteo Matteucci	
+			\line(2,0){500}
+		\end{center}
+		
+		\vspace{60pt}
+		
+		%defining work type
+		\begin{center}
+			{\Huge \textbf{Exams 2014-2015}}\\
+			\vspace{20pt}	
+			{\Huge \textbf{Summary}}\\
+		\end{center}
+		
+		\vspace{60pt}
+		
+		%defining project repository
+		\begin{center}
+			{\large Project Repository}
+		\end{center}
+		\begin{tabularx}{\textwidth}{|X|}
+			\hline
+			\href{https://github.com/attillax/PAMI-2015}{Click}\\
+			\hline
+		\end{tabularx}
+		
+		\vspace{20pt}
+		
+		%defining team members
+		\begin{center}
+			{\large Team Members}
+		\end{center}
+		\begin{tabularx}{\textwidth}{|X|X|X|}
+			\hline
+			ID & Surname & Name\\
+			\hline
+			10460625 & Golubeva & Svetlana\\
+			\hline
+			&  & \\
+			\hline
+			&  & \\
+			\hline
+			&  & \\
+			\hline
+		\end{tabularx}
+		
+		\vspace{\fill}
+		\begin{center}
+			\line(2,0){500}
+		\end{center}
+		
+	\end{titlepage}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\tableofcontents
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\newpage
+\listoftables
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%\newpage
+\listoffigures
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\newpage
+\section{}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\end{document}
