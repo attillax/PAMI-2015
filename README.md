@@ -20,3 +20,8 @@ To remove all compiled files you will need to execute the following command:
 ```
 make clean
 ```
+
+To remove techical files appeared during compilation you will need to execute the following command:
+```
+make clean-temp
+```
