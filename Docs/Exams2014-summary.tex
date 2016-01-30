@@ -27,7 +27,7 @@
 		\end{center}
 		
 		\vspace{60pt}
-		
+                xesh		
 		%defining work type
 		\begin{center}
 			{\Huge \textbf{Exams 2014-2015}}\\
@@ -86,7 +86,95 @@
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \newpage
-\section{}
+\section{Statistical learning (8 points)}
+\subsection{ex 2015-02-09}
+Answer the following questions:
+\begin{enumerate}
+\item Describe what are the bias, variance, and irreducible error of a model, how are they related with its complexity, how they are related to the expected prediction error, and what is the meaning of “bias-variance tradeoff”?
+\item Draw a plot of (1) bias, (2) variance, (3) training error, (4) test error, and (5) irreducible error curves as a function of increasing amount of flexibility in a statistical learning method. Explain the reason of their shapes and highlight the relationships among them.
+\end{enumerate}
+
+\subsection{ex 2015-02-23}
+
+\subsection{ex 2015-07-06}
+
+\subsection{ex 2015-09-14}
+
+\subsection{ex 2015-09-30}
+
+\section{Linear regression (8 points)}
+\subsection{ex 2015-02-09}
+Given the variables x = \{1, 2, 3, 4, 5, 6, 7, 8, 9\} and y = \{3.3, 3.6, 5.2, 5.6, 7.4, 8.3, 8.7, 9.7, 11.2\}
+\begin{enumerate}
+\item Manually compute the parameters $\hat{\beta}_{0} $ and $\hat{\beta}_{1} $ of a linear model $ \hat{y} = \hat{\beta}_{0} + \hat{\beta}_{1} x$ which fits the given data
+\item What is the value of MSE calculated between the values of y and the ones returned by the $\hat{y}$ function?
+\item How can we compute if the trend identified by $\hat{\beta}_{1}$ is significant or it is just due to spurious correlations?
+\end{enumerate}
+ 
+To ease your computation, you can follow the following steps:
+\begin{itemize}
+\item calculate the mean $\bar{x}$ of x
+\item calculate the mean $\bar{y}$ of y
+\item calculate $ x - \bar{x} $ (a vector where each value is $ x_{i} - \bar{x} $̄ )
+\item calculate $ y - \bar{y} $ (as above)
+\item calculate $ \hat{\beta}_{1} = \frac{\sum_{i=1}^{n} (x_{i}-\bar{x}) (y_{i}-\bar{y})}{ \sum_{i=1}^{n} (x_{i}-\bar{x})^{2} } $
+\item calculate $ \hat{\beta}_{o} = \hat{y} - \hat{\beta}_{1} x $
+  ̄
+\end{itemize}
+
+\subsection{ex 2015-02-23}
+
+\subsection{ex 2015-07-06}
+
+\subsection{ex 2015-09-14}
+
+\subsection{ex 2015-09-30}
+
+\section{Classification (8 points)}
+\subsection{ex 2015-02-09}
+Given the two sets of samples from classes RED = \{(1, 3), (2, 2), (3.5, 1), (5, 4), (1.5, 4), (4, 2)\} and GREEN = \{(2, 3), (3, 0.5), (4, 3), (3.5, 2), (1, 2), (2, 1)\}, and the three unclassified elements a = (4, 1), b = (2, 3.5), and c = (3, 4)
+\begin{enumerate}
+\item Use the KNN approach to classify the unknown items for k = 1, 3, 5. Apply the Euclidean distance as a metric (note that you can skip the actual distance calculations if you can tell the nearest neighbours at a glance).
+\item Describe in details the Linear Discriminant Analysis and Logistic Regression techniques for classification and discuss how these techniques perform, in general, with respect to the KNN classifiers.
+\end{enumerate}
+
+\subsection{ex 2015-02-23}
+
+\subsection{ex 2015-07-06}
+
+\subsection{ex 2015-09-14}
+
+\subsection{ex 2015-09-30}
+
+\section{Clustering (8 points)}
+\subsection{ex 2015-02-09}
+Suppose you want to evaluate the results of some clustering algorithms using SSE and Accuracy.
+\begin{enumerate}
+\item Which of these measures is defined as “internal”, which is “external”, and what does this mean? 
+\item After running your function, you obtain the result SSE=21.5. How can you evaluate whether this is a good or bad result? What would you compare this result with?
+\item One of the clustering algorithms allows you to choose the number of clusters in advance. You calculate SSE after different executions of this algorithm, using K=2, 3, ..., 10. SSE for K=10 provides the lowest value: what can you deduce from this?
+\item Now suppose you have ground truth for your dataset. You run two different clustering algorithms on the same data and obtain the following results:
+
+\begin{center}
+	\begin{tabular}{c|cc}
+                & SSE & Accuracy\\
+                \hline
+                Algorithm1 & 115.3 & 87\% \\
+                Algorithm2 & 1285 & 95\% \\
+	\end{tabular}
+\end{center}
+
+What is the meaning of these results? Which algorithm is better?
+\end{enumerate}
+
+
+\subsection{ex 2015-02-23}
+
+\subsection{ex 2015-07-06}
+
+\subsection{ex 2015-09-14}
+
+\subsection{ex 2015-09-30}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \end{document}
