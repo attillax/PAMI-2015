@@ -149,11 +149,10 @@ In statistical learning theory, Test and Training set Mean Squared Errors are re
 \end{center}
 
 \subsection{ex 2015-09-30}
+Answer the following questions
 \begin{enumerate}
-\item
-\item
-\item
-\item 
+\item Describe (1) what are the bias, variance, and irreducible error of a model, (2) how are they related with its complexity, (3) how they are related to the expected prediction error, and (4) what is the meaning of “bias-variance tradeoff”?
+\item Draw a plot of (1) bias, (2) variance, (3) training error, (4) test error, and (5) irreducible error curves as a function of increasing amount of flexibility in a statistical learning method. Explain the reason of their shapes and highlight the relationships among them.
 \end{enumerate}
 
 \section{Linear regression (8 points)}
@@ -190,7 +189,7 @@ Provide detailed answers to the following
 \end{enumerate}
 
 \subsection{ex 2015-07-06}
-Given the variables $ x_{1} $ = \{14, 1, 13, 8, 11, 19, 0, 9\}, $ x_{2} $ = \{12, 13, 7, 10, 8, 11, 16, 10\}, and $ y $ = \{26, 7, 24, 15, 24, 38, 2, 13\}, manually calculate the parameters $ \hat{\beta}_{0} $ and $ \hat{\beta}_{1} $ of the two linear functions y ˆ = β ˆ 0 + β ˆ 1 x 1 and y ˆ = β ˆ 0 + β ˆ 1 x 2 which fit the given data. To ease your calculations, take the following steps:
+Given the variables $ x_{1} $ = \{14, 1, 13, 8, 11, 19, 0, 9\}, $ x_{2} $ = \{12, 13, 7, 10, 8, 11, 16, 10\}, and $ y $ = \{26, 7, 24, 15, 24, 38, 2, 13\}, manually calculate the parameters $ \hat{\beta}_{0} $ and $ \hat{\beta}_{1} $ of the two linear functions $ \hat{y} = \beta_{0} + \beta_{1} x_{1} $ and $ \hat{y} = \beta_{0} + \beta_{1} x_{2} $ which fit the given data. To ease your calculations, take the following steps:
 \begin{enumerate}
 \item calculate the mean $ \bar{x} $ of x and the mean $ \bar{y} $ of y
 \item calculate $ x - \bar{x} $ (a vector where each value is $ x_{i} - \bar{x} $̄ ) and $ y - \bar{y} $  
@@ -207,11 +206,11 @@ verified.
 \end{itemize}
 
 \subsection{ex 2015-09-30}
+Given the following observations x = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\} and y = \{12, 11.2, 9.7, 8.7, 8.3, 7.4, 5.6, 5.2, 3.6, 3.3\}
 \begin{enumerate}
-\item
-\item
-\item
-\item 
+\item Manually compute the parameters $ \hat{\beta}_{0} $ and $ \hat{\beta}_{1} $ of a linear model $ \hat{y} = \beta_{0} + \beta_{1} x $ which fits the given data
+\item What is the value of MSE calculated between the values of y and the ones returned by the $ \hat{y} $ function?
+\item Is the trend identified by $ \hat{\beta}_{1} $ significant or it is just due to spurious correlations? You have to provide supporting computations and justifications for your answer. 
 \end{enumerate}
 
 \section{Classification (8 points)}
@@ -272,12 +271,18 @@ the classifier
 \end{enumerate}
 
 \subsection{ex 2015-09-30}
-\begin{enumerate}
-\item
-\item
-\item
-\item 
-\end{enumerate}
+(a) Given the dataset in figure, classify the three points identified with white triangles (at coordinates (21, 5), (24, 20), and (26.5, 11.5) respectively), using the KNN algorithm with k = 2, 3, 5. Note: if your point has the same amount of neighbors for each class, you can assign it the class of the closest one.\\
+
+(b) A hospital collected data for a group of patients to study the relationship between Heart-attack Risk Index (HRI = $X_{1}$ ), weekly hours of physical activity (PHY = $X_{2}$), and the probability Y of having a heart attack. Roughly, for a heart attack probability to be low the HRI should be below 5, and the more hours one spends exercising the better it is.
+
+After fitting a logistic regression, the following coefficients were estimated: $ \hat{\beta}_{0} $ = --9.7, $ \hat{\beta}_{0} $ = 1.05, and $ \hat{\beta}_{2} $ = -- 0.29.
+\begin{itemize}
+\item  estimate the probability for a patient with HRI=5 and PHY=2 to have a heart
+attack;
+\item estimate how many hours of PHY a patient with HRI=7.5 should do to have that
+same probability.
+\end{itemize}
+\{PIC1\}
 
 \section{Clustering (8 points)}
 \subsection{ex 2015-02-09}
@@ -349,12 +354,9 @@ Then, calculate and show the different steps of a K-Means algorithm run on the s
 Are there any differences between the two algorithms? If so, how could you explain their different behavior?
 
 \subsection{ex 2015-09-30}
-\begin{enumerate}
-\item
-\item
-\item
-\item 
-\end{enumerate}
+a) Hierarchical clustering is not a single algorithm but rather a family of different clustering algorithms. Explain (1) how this family is composed, (2) how these algorithms work, and (3) what metrics exist to measure the distance between clusters.
+
+b) Invent a clustering problem (for example, clustering of students according to their grades, news articles according to the words they contain, or images according to their visual descriptors). Describe the problem in detail, specifying e.g. what kind of application you are doing clustering for, the dataset size and dimensionality, what problems you might have while clustering, and so on. Then choose any two of the algorithms we have studied, and try to ”sell” us one of the two, describing the characteristics of both and explaining why using one is better than the other (for instance, in terms of speed, quality of results, etc.).
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \end{document}
