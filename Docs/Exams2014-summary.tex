@@ -95,34 +95,51 @@ Answer the following questions:
 \end{enumerate}
 
 \subsection{ex 2015-02-23}
-In statistical learning theory, Test and Training set Mean Squared Errors are related by
-the so called Bias-Variance trade-off:
-\begin{enumerate}
-\item
-\item
-\item
-\item 
-\end{enumerate}
+In statistical learning theory, Test and Training set Mean Squared Errors are related by the so called Bias-Variance trade-off:
+\begin{itemize}
+\item[1.] Write and comment the formula representing the Bias-Variance trade off for the Expected Prediction Error in Regression
+\end{itemize}
 
-1. Write and comment the formula representing the Bias-Variance trade off for the
-Expected Prediction Error in Regression
-The previous formula does not hold for Classification, but a useful result exists for the
-Classification Error Rate as well
-2. Write and comment what statistical learning theory states about the minimum
-achievable average test error rate.
+The previous formula does not hold for Classification, but a useful result exists for the Classification Error Rate as well
+
+\begin{itemize}
+\item[2.] Write and comment what statistical learning theory states about the minimum achievable average test error rate.
+\end{itemize}
+
 Provided the previous result for Classification, answer the following questions
-3. Describe in detail how the previous result for the optimal classifier is used to derive
-the Logistic Regression classifier; provide a detailed description of the underlining
-model for Logistic Regression and derive the shape of the decision boundary for
-Logistic Regression.
-4. Describe in detail how the previous result for the optimal classifier is used to
-derive Linear Discriminant Analysis; provide a detailed description of the under-
-lining model for Linear Discriminant Analysis and derive the shape of the decision
-boundary for Linear Discriminant Analysis.
+
+\begin{itemize}
+\item[3.] Describe in detail how the previous result for the optimal classifier is used to derive the Logistic Regression classifier; provide a detailed description of the underlining model for Logistic Regression and derive the shape of the decision boundary for Logistic Regression.
+\item[4.] Describe in detail how the previous result for the optimal classifier is used to derive Linear Discriminant Analysis; provide a detailed description of the underlining model for Linear Discriminant Analysis and derive the shape of the decision boundary for Linear Discriminant Analysis.
+\end{itemize}
+
 
 \subsection{ex 2015-07-06}
 
 \subsection{ex 2015-09-14}
+
+\begin{center}
+  \begin{tabular}{c|c}
+    X & Class \\
+    \hline
+    \hline
+    0 & A \\
+    1 & A \\
+    2 & A \\
+    1 & A \\
+    3 & A \\
+    \hline
+    1 & B \\
+    2 & B \\
+    3 & B \\
+    4 & B \\
+    \hline
+    4 & C \\
+    6 & C \\
+    6 & C \\
+    6 & C \\
+  \end{tabular}
+\end{center}
 
 \subsection{ex 2015-09-30}
 
@@ -143,15 +160,20 @@ To ease your computation, you can follow the following steps:
 \item calculate $ y - \bar{y} $ (as above)
 \item calculate $ \hat{\beta}_{1} = \frac{\sum_{i=1}^{n} (x_{i}-\bar{x}) (y_{i}-\bar{y})}{ \sum_{i=1}^{n} (x_{i}-\bar{x})^{2} } $
 \item calculate $ \hat{\beta}_{o} = \hat{y} - \hat{\beta}_{1} x $
-  ̄
 \end{itemize}
 
 \subsection{ex 2015-02-23}
+Provide detailed answers to the following
 \begin{enumerate}
-\item
-\item
-\item
-\item 
+\item Let assume you have a dataset with n=1000 observations and you try to fit different
+  models on the data:
+  \begin{itemize}
+\item A linear regression model, i.e. $ Y = \beta_{0} + \beta_{1} X + \epsilon $
+\item The polynomial regression model $ Y = \beta_{0} + \beta_{1} X + \beta_{2} X^{2} + \beta_{3} X^{3} + \beta_{4} X^{4} +  \epsilon $
+\item A smoothing spline (i.e. an even more flexible model than the previous two)
+  \end{itemize}
+ For each of the three models, you calculate both training and test RSS. How would you expect the values of RSS to be (both in the training and in the test case), supposing that the true relationship between X and Y is (a) linear or (b) cubic?
+\item What is the additive assumption in a linear regression model? Show how you would detect and quantify a possible interaction between the variables in a regression model and how you would model it from a statistical perspective. Finally explain, with an example, how your model would take this interaction into account (e.g. explain how, given a change in the input, the dependent variable – and consequently the output – change).
 \end{enumerate}
 
 \subsection{ex 2015-07-06}
@@ -187,11 +209,39 @@ Given the two sets of samples from classes RED = \{(1, 3), (2, 2), (3.5, 1), (5,
 \end{enumerate}
 
 \subsection{ex 2015-02-23}
+Consider the following dataset with three classes and the Linear Discriminant Analysis
+model (LDA hereafter)
+\begin{center}
+  \begin{tabular}{cc|c}
+    X1 & X2  & Class \\
+    \hline
+    \hline
+    1 & 1 & A \\
+    2 & 2 & A \\
+    2 & 3 & A \\
+    3 & 1 & A \\
+    4 & 1 & A \\
+    \hline
+    1 & 4 & B \\
+    2 & 5 & B \\
+    3 & 4 & B \\
+    4 & 5 & B \\
+    \hline
+    4 & 3 & C \\
+    6 & 1 & C \\
+    6 & 2 & C \\
+    6 & 3 & C \\
+    \hline
+  \end{tabular}
+\end{center}
+
 \begin{enumerate}
-\item
-\item
-\item
-\item 
+\item Compute the parameters of a LDA classifier
+\item Compute the discriminant functions for the LDA classifier
+\item Compute the equations of the boundaries between the three classes according to
+the classifier
+\item Draw the dataset and the boundaries between the classes according to the classifier
+\item Compute the parameters in case of a Quadratic Discriminant Analysis model
 \end{enumerate}
 
 \subsection{ex 2015-07-06}
@@ -239,14 +289,18 @@ Suppose you want to evaluate the results of some clustering algorithms using SSE
 What is the meaning of these results? Which algorithm is better?
 \end{enumerate}
 
-
 \subsection{ex 2015-02-23}
-\begin{enumerate}
-\item
-\item
-\item
+Given the two datasets shown in figure (where blue diamonds are data points and red circles different centroids starting points), calculate and show the different steps of the K-Means algorithm for both the examples in the following way:
+\begin{itemize}
+\item At each step, specify the initial positions of the centroids
+\item Without actually calculating it (unless it is needed to verify distances you cannot tell apart at a glance), for each step specify which centroid the various dataset points belong to
+\item After you have assigned data points to the different centroids, calculate their new positions and proceed to next step
 \item 
-\end{enumerate}
+\end{itemize}
+
+Tell how many iterations the algorithm needs to converge, compare its behavior in the two cases and write a comment about it: is the final situation the one you might expect/desire? If not, explain why.\\
+
+\{PIC1 \} \{PIC2 \}
 
 \subsection{ex 2015-07-06}
 \begin{enumerate}
