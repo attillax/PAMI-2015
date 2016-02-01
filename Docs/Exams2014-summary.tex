@@ -113,8 +113,15 @@ Provided the previous result for Classification, answer the following questions
 \item[4.] Describe in detail how the previous result for the optimal classifier is used to derive Linear Discriminant Analysis; provide a detailed description of the underlining model for Linear Discriminant Analysis and derive the shape of the decision boundary for Linear Discriminant Analysis.
 \end{itemize}
 
-
 \subsection{ex 2015-07-06}
+(a) Both classification and regression problems can be solved by simple but restrictive methods as well as more complex but flexible ones. Explain which ones are better:
+\begin{enumerate}
+\item when doing inference or prediction;
+\item when the irreducible error is extremely high;
+\item when the number of observations is very large and the number of predictors is small;
+\item when the function we need to estimate is highly non-linear.
+\end{enumerate}
+(b) What are the Bayes classifier and the Bayes error rate? Define them and explain why the latter is defined as analogous to the irreducible error.
 
 \subsection{ex 2015-09-14}
 
@@ -177,12 +184,14 @@ Provide detailed answers to the following
 \end{enumerate}
 
 \subsection{ex 2015-07-06}
+Given the variables $ x_{1} $ = \{14, 1, 13, 8, 11, 19, 0, 9\}, $ x_{2} $ = \{12, 13, 7, 10, 8, 11, 16, 10\}, and $ y $ = \{26, 7, 24, 15, 24, 38, 2, 13\}, manually calculate the parameters $ \hat{\beta}_{0} $ and $ \hat{\beta}_{1} $ of the two linear functions y ˆ = β ˆ 0 + β ˆ 1 x 1 and y ˆ = β ˆ 0 + β ˆ 1 x 2 which fit the given data. To ease your calculations, take the following steps:
 \begin{enumerate}
-\item
-\item
-\item
-\item 
+\item calculate the mean $ \bar{x} $ of x and the mean $ \bar{y} $ of y
+\item calculate $ x - \bar{x} $ (a vector where each value is $ x_{i} - \bar{x} $̄ ) and $ y - \bar{y} $  
+\item calculate $ \hat{\beta}_{1} = \frac{\sum_{i=1}^{n} (x_{i}-\bar{x}) (y_{i}-\bar{y})}{ \sum_{i=1}^{n} (x_{i}-\bar{x})^{2} } $, then $ \hat{\beta}_{o} = \hat{y} - \hat{\beta}_{1} x $
 \end{enumerate}
+Measure the quality of your predictions in terms of MSE, compare the results of the two
+linear regressions, and justify them.
 
 \subsection{ex 2015-09-14}
 \begin{enumerate}
@@ -245,12 +254,10 @@ the classifier
 \end{enumerate}
 
 \subsection{ex 2015-07-06}
-\begin{enumerate}
-\item
-\item
-\item
-\item 
-\end{enumerate}
+(a) Given the subset of Iris dataset in figure, classify the three points identified with white triangles (at coordinates (5.85, 2.3), (4.7, 2.4), and (6.5, 2.5) respectively), using the KNN algorithm with k = 3, 5, 7. Note: if your point has the same amount of neighbors for each class, you can assign it the class of the closest one.\\
+
+(b) Explain what the “curse of dimensionality” is. How would you address this problem?\\
+\{PIC1\}
 
 \subsection{ex 2015-09-14}
 \begin{enumerate}
@@ -303,11 +310,22 @@ Tell how many iterations the algorithm needs to converge, compare its behavior i
 \{PIC1 \} \{PIC2 \}
 
 \subsection{ex 2015-07-06}
+Given the following algorithms:
 \begin{enumerate}
-\item
-\item
-\item
-\item 
+\item K-means
+\item Hierarchical
+\item Mixture of Gaussians
+\item DBSCAN
+\item K-medoids
+\item Fuzzy C-means
+\item Jarvis-Patrick
+\end{enumerate}
+complete the following sentences matching them with one (or more!) of the algorithms, answering the questions in parentheses and providing detailed explanations to motivate your choices. (NOTE: although sentences refer to a single algorithm, there may be more than one valid choice. In these cases, provide and motivate all of them).
+\begin{enumerate}
+\item[(a)] This algorithm relies on a “self-scaling” neighborhood (what does this mean? How can this be accomplished?)
+\item[(b)] This algorithm builds new clusters by merging or splitting existing ones (describe the differences between the two approaches and provide the computational complexity of this approach)
+\item[(c)] This algorithm provides a “soft” classification (what does this mean?)
+\item[(d)] This algorithm can provide good results even if noise is present in the dataset (is it also able to detect which points are noise?)
 \end{enumerate}
 
 \subsection{ex 2015-09-14}
