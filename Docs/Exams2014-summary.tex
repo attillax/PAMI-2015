@@ -78,14 +78,6 @@
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \newpage
-\listoftables
-
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-%\newpage
-\listoffigures
-
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\newpage
 \section{Statistical learning (8 points)}
 \subsection{ex 2015-02-09}
 Answer the following questions:
@@ -124,6 +116,13 @@ Provided the previous result for Classification, answer the following questions
 (b) What are the Bayes classifier and the Bayes error rate? Define them and explain why the latter is defined as analogous to the irreducible error.
 
 \subsection{ex 2015-09-14}
+In statistical learning theory, Test and Training set Mean Squared Errors are related by the so called Bias-Variance trade-off:
+\begin{itemize}
+\item[(a)] Write and comment the formula representing the Bias-Variance trade off for the Expected Prediction Error in Regression
+\item[(b)] The previous formula does not hold for Classification, but a useful result exists for the Classification Error Rate; write and comment what statistical learning theory states about the minimum achievable average test error rate.
+\item[(c)] Describe in detail how the previous result for the optimal classifier is used to derive Linear Discriminant Analysis (LDA) classifier providing a detailed description of the underlining model and the shape of its decision boundary (derive it from the model).
+\item[(d)] Train a LDA classifier using the data provided in the table and provide the classification error achieved by this classifier on the training data
+\end{itemize}
 
 \begin{center}
   \begin{tabular}{c|c}
@@ -145,10 +144,17 @@ Provided the previous result for Classification, answer the following questions
     6 & C \\
     6 & C \\
     6 & C \\
+    \hline
   \end{tabular}
 \end{center}
 
 \subsection{ex 2015-09-30}
+\begin{enumerate}
+\item
+\item
+\item
+\item 
+\end{enumerate}
 
 \section{Linear regression (8 points)}
 \subsection{ex 2015-02-09}
@@ -194,12 +200,11 @@ Measure the quality of your predictions in terms of MSE, compare the results of 
 linear regressions, and justify them.
 
 \subsection{ex 2015-09-14}
-\begin{enumerate}
-\item
-\item
-\item
-\item 
-\end{enumerate}
+\begin{itemize}
+\item[(a)] What is the standard error and how is it used to calculate a confidence interval? For instance, what does it mean to have a 95\% confidence interval on the parameter $ \beta_{1} $ of a linear regression?
+\item[(b)] Explain what the null hypothesis is in the context of linear regression and how it is
+verified.
+\end{itemize}
 
 \subsection{ex 2015-09-30}
 \begin{enumerate}
@@ -261,10 +266,9 @@ the classifier
 
 \subsection{ex 2015-09-14}
 \begin{enumerate}
-\item
-\item
-\item
-\item 
+\item[(a)] What is the difference between Discriminative and Generative methods for classification? Provide one example for each category explaining why it can be considered as Discriminative/Generative.
+\item[(b)] Provide a detailed description of the Generative method you previously introduced, the underlining model, the training algorithm, and derive the shape of its decision boundary.
+\item[(c)] Provide a detailed description of the Discriminative method you previously introduced, the underlining model, the training algorithm, and describe the shape of its decision boundary.
 \end{enumerate}
 
 \subsection{ex 2015-09-30}
@@ -329,12 +333,20 @@ complete the following sentences matching them with one (or more!) of the algori
 \end{enumerate}
 
 \subsection{ex 2015-09-14}
-\begin{enumerate}
-\item
-\item
-\item
-\item 
-\end{enumerate}
+Given the dataset shown in figure, execute the steps of a hierarchical (agglomerative)
+algorithm using the single linkage technique, showing the new links you create at each
+step of the algorithm (labeling them with a number) and stopping when you obtain two
+clusters.\\
+
+\{PIC1\}\\
+
+Then, calculate and show the different steps of a K-Means algorithm run on the same dataset with the starting centroid positions $ C_{1} = (1, 1)$ and $ C_{2} $ = (5, 3.5), in the following way:
+\begin{itemize}
+\item at each step, specify the initial positions of the centroids
+\item without actually calculating it (unless it is needed to verify distances you cannot tell apart at a glance), for each step specify which centroid the various dataset points belong to
+\item after you have assigned points to the different centroids, calculate their new positions and proceed to next step
+\end{itemize}
+Are there any differences between the two algorithms? If so, how could you explain their different behavior?
 
 \subsection{ex 2015-09-30}
 \begin{enumerate}
