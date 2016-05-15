@@ -1,0 +1,131 @@
+\documentclass[a4paper,12pt,titlepage]{article} %page properties
+\usepackage[headings]{fullpage} %for fullpage with headings
+\usepackage{fancyhdr} %for headings
+\usepackage{graphicx} %for label
+\usepackage{tabularx} %for fullpage tables
+\usepackage{longtable} %for tables on multiple pages
+\usepackage{hyperref} %for links
+\usepackage{mathtools} %for math symbols
+
+% defining headings
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE,RO]{PAMI 2015-2016 \hfill EXAMS 2014-2015 SUMMARY}
+
+\begin{document}
+	\begin{titlepage}
+		
+		%defining university
+		\begin{center}
+			POLITECNICO DI MILANO --- COMO CAMPUS\\
+			\vspace{10pt}
+			\includegraphics[scale=0.1]{logo-polimi.png}\\
+			\vspace{10pt}
+			PATTERN ANALYSIS AND MACHINE INTELLIGENCE 2015-2016\\
+			prof. Matteo Matteucci	
+			\line(2,0){500}
+		\end{center}
+		
+		\vspace{60pt}	
+		%defining work type
+		\begin{center}
+			{\Huge \textbf{Formulas Summary}}\\
+		\end{center}
+		
+		\vspace{60pt}
+		
+		%defining project repository
+		\begin{center}
+			{\large Project Repository}
+		\end{center}
+		\begin{tabularx}{\textwidth}{|X|}
+			\hline
+			\href{https://github.com/attillax/PAMI-2015}{Click}\\
+			\hline
+		\end{tabularx}
+		
+		\vspace{20pt}
+		
+		%defining team members
+		\begin{center}
+			{\large Team Members}
+		\end{center}
+		\begin{tabularx}{\textwidth}{|X|X|X|}
+			\hline
+			ID & Surname & Name\\
+			\hline
+			10460625 & Golubeva & Svetlana\\
+			\hline
+			&  & \\
+			\hline
+			&  & \\
+			\hline
+			&  & \\
+			\hline
+		\end{tabularx}
+		
+		\vspace{\fill}
+		\begin{center}
+			\line(2,0){500}
+		\end{center}
+		
+	\end{titlepage}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\tableofcontents
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\newpage
+\section{Statistical learning}
+
+\section{Statistical learning}
+\begin{itemize}
+	\item Bias, Variance, irreducible error, expected prediction error
+	\item Flexibility, complexity
+	\item Bias-variance trade-off (the relations among MSE (test \& trainig), Expected prediction error) (regr)
+	\item minimum avg. test error rate (class)
+	\item Plots
+	\item LDA, decision boundaries
+	\item inference vs prediction, \# of observations vs \# of predictors
+	\item non-linear functions
+	\item Bayes classifier and bayes error rate
+	\item Example of a solution for LDA
+\end{itemize}
+
+\section{Linear regression }
+\begin{itemize}
+	\item MSE
+	\item Manual computations for linear model ($ \hat{}, \bar{}, \beta$, etc)
+	\item training \& test RSS
+	\item convenience intervals
+	\item null hypothesis
+\end{itemize}
+
+\section{Classification}
+\begin{itemize}
+	\item Discriminative methods
+	\item Generative methods
+	\item KNN
+	\item Euclidean distance
+	\item LDA, logistic regression
+	\item Manual computations (discriminants, boundary equations, drawings)
+	\item QDA (parameters)
+	\item the curse of dimensionality
+	\item estimation of probabilities
+\end{itemize}
+
+\section{Clustering}
+\begin{itemize}
+	\item SSE, accuracy (internal/external),
+	\item K-Means
+	\item Hierarchical (agglomerative)
+	\item Mixture of Gaussians
+	\item DBSCAN
+	\item K-medoids
+	\item Fuzzy C-means
+	\item Jarvis-Patrick
+	\item linkage techniques
+	\item metrics for the distance between clusters
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\end{document}
