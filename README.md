@@ -20,7 +20,7 @@ make exams
 
 To compile the summary of formulas the first time you will need to execute the following command:
 ```
-make exams
+make formulas
 ```
 
 To remove compiled report you will need to execute the following command:
