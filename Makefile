@@ -7,7 +7,7 @@ TEMPFILES = \
 
 REPORTDIR = ./Docs
 REPORT = report_hw.pdf
-EXAMS = Exams2014-summary.pdf
+EXAMS = ExamsSummary.pdf
 FORMULAS = FormulasSummary.pdf
 
 $(REPORTDIR)/$(REPORT): $(REPORTDIR)/$(REPORT:%.pdf=%.tex)
