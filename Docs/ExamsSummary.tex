@@ -152,6 +152,20 @@ Answer the following questions
 \item Draw a plot of (1) bias, (2) variance, (3) training error, (4) test error, and (5) irreducible error curves as a function of increasing amount of flexibility in a statistical learning method. Explain the reason of their shapes and highlight the relationships among them.
 \end{enumerate}
 
+\subsection{ex 2016-02-03}
+According to statistical learning theory, in regression we assume a relationship exists between an observed variable and and a dependent variable in the form 
+
+$$ Y_{i} = f(X_{i}) + \epsilon_{i}, \epsilon_{i} \sim N(o, \sigma^{2})$$
+
+\begin{enumerate}
+\item What are the \textit{two} sources of errors we have whe estimating \textit{f} from data and what are these errors due to?
+\item According to statistical learning theory, Test and Training Mean Squared Errors are related by Bias-Variance trade-off; write and comment the formula representing the Bias-Variance trade-off for the Expected Prediction Error in Regression.
+\item The previos formula does not hold for Classification, but a useful result exists for the Classification Error Rate as well. Write and comment what statistical learnig theory states about the minimal achievable average test error rate.
+\item Describe in detail how the previous result for the optimal classifier is used to derive the Logistic Regression classifier and derive the shape of the decision boundary for Logistic Regression.
+\end{enumerate}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\newpage
 \section{Linear regression (8 points)}
 \subsection{ex 2015-02-09}
 Given the variables x = \{1, 2, 3, 4, 5, 6, 7, 8, 9\} and y = \{3.3, 3.6, 5.2, 5.6, 7.4, 8.3, 8.7, 9.7, 11.2\}
@@ -210,6 +224,16 @@ Given the following observations x = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\} and y = \
 \item Is the trend identified by $ \hat{\beta}_{1} $ significant or it is just due to spurious correlations? You have to provide supporting computations and justifications for your answer. 
 \end{enumerate}
 
+\subsection{ex 2016-02-03}
+Given the following observations x = \{45, 54, 41, 55, 52, 56, 49, 50, 46, 47\} and y = \{108, 121, 98, 124, 124, 122, 112, 114, 105, 107\}
+\begin{enumerate}
+\item Manually compute the parameters $ \hat{\beta}_{0} $ and $ \hat{\beta}_{1} $ of a linear model $ \hat{y} = \beta_{0} + \beta_{1} x $ which fits the given data
+\item What is the value of MSE calculated between the values of y and the ones returned by the $ \hat{y} $ function?
+\item Is the trend identified by $ \hat{\beta}_{1} $ significant or it is just due to spurious correlations? You have to provide supporting computations and justifications for your answer. 
+\end{enumerate}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\newpage
 \section{Classification (8 points)}
 \subsection{ex 2015-02-09}
 Given the two sets of samples from classes RED = \{(1, 3), (2, 2), (3.5, 1), (5, 4), (1.5, 4), (4, 2)\} and GREEN = \{(2, 3), (3, 0.5), (4, 3), (3.5, 2), (1, 2), (2, 1)\}, and the three unclassified elements a = (4, 1), b = (2, 3.5), and c = (3, 4)
@@ -274,13 +298,26 @@ the classifier
 
 After fitting a logistic regression, the following coefficients were estimated: $ \hat{\beta}_{0} $ = --9.7, $ \hat{\beta}_{0} $ = 1.05, and $ \hat{\beta}_{2} $ = -- 0.29.
 \begin{itemize}
-\item  estimate the probability for a patient with HRI=5 and PHY=2 to have a heart
-attack;
-\item estimate how many hours of PHY a patient with HRI=7.5 should do to have that
-same probability.
+\item  estimate the probability for a patient with HRI=5 and PHY=2 to have a heart attack;
+\item estimate how many hours of PHY a patient with HRI=7.5 should do to have that same probability.
 \end{itemize}
 \{PIC1\}
 
+\subsection{ex 2016-02-03}
+Let consider the Linear Discriminant Analysis (LDA) classifier and the following dataset:
+
+$$ x = \{ 3, -1, -4, 0, 2, 5, -1, -2, -2, -2 \}, $$
+$$ y = \{ A, B, C, A, A, B, A, B, B, C \} $$
+
+\begin{itemize}
+\item Describe the LDA model and its underlining assumptions. What is its relationship with the Bayes classifier?
+\item Derive the analytical form of the decision boundary defined by the LDA classifier in a single dimension setting
+\item Derive the analytical form of the decision boundary defined by the LDA classifier in a multidimensional setting
+\item Learn an LDA classifier from the provided dataset and compute its classification error on the training set
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\newpage
 \section{Clustering (8 points)}
 \subsection{ex 2015-02-09}
 Suppose you want to evaluate the results of some clustering algorithms using SSE and Accuracy.
@@ -353,6 +390,15 @@ Are there any differences between the two algorithms? If so, how could you expla
 a) Hierarchical clustering is not a single algorithm but rather a family of different clustering algorithms. Explain (1) how this family is composed, (2) how these algorithms work, and (3) what metrics exist to measure the distance between clusters.
 
 b) Invent a clustering problem (for example, clustering of students according to their grades, news articles according to the words they contain, or images according to their visual descriptors). Describe the problem in detail, specifying e.g. what kind of application you are doing clustering for, the dataset size and dimensionality, what problems you might have while clustering, and so on. Then choose any two of the algorithms we have studied, and try to ”sell” us one of the two, describing the characteristics of both and explaining why using one is better than the other (for instance, in terms of speed, quality of results, etc.).
+
+\subsection{ex 2016-02-03}
+From the very definition of what clustering is, we learned that the main purpose of a clustering algorithm is "to group objects in classes, so that inta-class similarity is maximized and inter-class similarity is minimized". Answer the following questions, \textit{providing examples} to support your claims.
+\begin{itemize}
+\item What is the relationship between \textit{similarity} and \textit{distance}? Is it always possible to calculate one from the other?
+\item Do all clustering algorithms just need similarities/distances to work or are there any other conditions to be met (or parameters to be specified)?
+\item The quality of a clustering algorithm is often evaluatedin terms of SSE. What is it? What value of SSE is a good value? Is this measure applicable across different datasets (i.e. is SSE = 5 on dataset A always better than SSE = 10 on dataset B)? Explain why.
+\item Suppose you run the same clustering algorithm on 1000 datasets which were randomly generated within a given interval. The 1000 SSE values you calculate fit a normal distribution with mean $ \mu $. You then run the same algorithm on a real dataset (whose data span the same interval you used to generate the random data) and get a result whose SSE is much smaller than $ \mu $. What can you conclude from this?
+\end{itemize}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \end{document}
