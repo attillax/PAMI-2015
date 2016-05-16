@@ -13,7 +13,7 @@ To compile the HomeWork report you will need to execute the following command:
 make
 ```
 
-To compile the summary of exams of year 2014/15 the first time you will need to execute the following command:
+To compile the summary of exams the first time you will need to execute the following command:
 ```
 make exams
 ```
