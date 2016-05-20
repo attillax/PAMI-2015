@@ -1,0 +1,466 @@
+\documentclass[a4paper,12pt,titlepage]{article} %page properties
+\usepackage[headings]{fullpage} %for fullpage with headings
+\usepackage{fancyhdr} %for headings
+\usepackage{graphicx} %for label
+\usepackage{tabularx} %for fullpage tables
+\usepackage{longtable} %for tables on multiple pages
+\usepackage{hyperref} %for links
+\usepackage{mathtools} %for math symbols
+
+% defining headings
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE,RO]{PAMI 2015-2016 \hfill EXAMS SUMMARY SOLUTIONS}
+
+\begin{document}
+	\begin{titlepage}
+		
+		%defining university
+		\begin{center}
+			POLITECNICO DI MILANO --- COMO CAMPUS\\
+			\vspace{10pt}
+			\includegraphics[scale=0.1]{logo-polimi.png}\\
+			\vspace{10pt}
+			PATTERN ANALYSIS AND MACHINE INTELLIGENCE 2015-2016\\
+			prof. Matteo Matteucci	
+			\line(2,0){500}
+		\end{center}
+		
+		\vspace{60pt}	
+		%defining work type
+		\begin{center}
+			{\Huge \textbf{Exams Summary}}\\
+			\vspace{20pt}
+			{\large \textbf{with solutions}}\\
+		\end{center}
+		
+		\vspace{60pt}
+		
+		%defining project repository
+		\begin{center}
+			{\large Project Repository}
+		\end{center}
+		\begin{tabularx}{\textwidth}{|X|}
+			\hline
+			\href{https://github.com/attillax/PAMI-2015}{Click}\\
+			\hline
+		\end{tabularx}
+		
+		\vspace{20pt}
+		
+		%defining team members
+		\begin{center}
+			{\large Team Members}
+		\end{center}
+		\begin{tabularx}{\textwidth}{|X|X|X|}
+			\hline
+			ID & Surname & Name\\
+			\hline
+			10460625 & Golubeva & Svetlana\\
+			\hline
+			&  & \\
+			\hline
+			&  & \\
+			\hline
+			&  & \\
+			\hline
+		\end{tabularx}
+		
+		\vspace{\fill}
+		\begin{center}
+			\line(2,0){500}
+		\end{center}
+		
+	\end{titlepage}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\tableofcontents
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\newpage
+\section{Statistical learning (8 points)}
+\subsection{ex 2015-02-09}
+Answer the following questions:
+\begin{enumerate}
+\item Describe what are the bias, variance, and irreducible error of a model, how are they related with its complexity, how they are related to the expected prediction error, and what is the meaning of “bias-variance tradeoff”?
+\item Draw a plot of (1) bias, (2) variance, (3) training error, (4) test error, and (5) irreducible error curves as a function of increasing amount of flexibility in a statistical learning method. Explain the reason of their shapes and highlight the relationships among them.
+\end{enumerate}
+
+\subsection{ex 2015-02-23}
+In statistical learning theory, Test and Training set Mean Squared Errors are related by the so called Bias-Variance trade-off:
+\begin{itemize}
+\item[1.] Write and comment the formula representing the Bias-Variance trade off for the Expected Prediction Error in Regression
+\end{itemize}
+
+The previous formula does not hold for Classification, but a useful result exists for the Classification Error Rate as well
+
+\begin{itemize}
+\item[2.] Write and comment what statistical learning theory states about the minimum achievable average test error rate.
+\end{itemize}
+
+Provided the previous result for Classification, answer the following questions
+
+\begin{itemize}
+\item[3.] Describe in detail how the previous result for the optimal classifier is used to derive the Logistic Regression classifier; provide a detailed description of the underlining model for Logistic Regression and derive the shape of the decision boundary for Logistic Regression.
+\item[4.] Describe in detail how the previous result for the optimal classifier is used to derive Linear Discriminant Analysis; provide a detailed description of the underlining model for Linear Discriminant Analysis and derive the shape of the decision boundary for Linear Discriminant Analysis.
+\end{itemize}
+
+\subsection{ex 2015-07-06}
+(a) Both classification and regression problems can be solved by simple but restrictive methods as well as more complex but flexible ones. Explain which ones are better:
+\begin{enumerate}
+\item when doing inference or prediction;
+\item when the irreducible error is extremely high;
+\item when the number of observations is very large and the number of predictors is small;
+\item when the function we need to estimate is highly non-linear.
+\end{enumerate}
+(b) What are the Bayes classifier and the Bayes error rate? Define them and explain why the latter is defined as analogous to the irreducible error.
+
+\subsection{ex 2015-09-14}
+In statistical learning theory, Test and Training set Mean Squared Errors are related by the so called Bias-Variance trade-off:
+\begin{itemize}
+\item[(a)] Write and comment the formula representing the Bias-Variance trade off for the Expected Prediction Error in Regression
+\item[(b)] The previous formula does not hold for Classification, but a useful result exists for the Classification Error Rate; write and comment what statistical learning theory states about the minimum achievable average test error rate.
+\item[(c)] Describe in detail how the previous result for the optimal classifier is used to derive Linear Discriminant Analysis (LDA) classifier providing a detailed description of the underlining model and the shape of its decision boundary (derive it from the model).
+\item[(d)] Train a LDA classifier using the data provided in the table and provide the classification error achieved by this classifier on the training data
+\end{itemize}
+
+\begin{center}
+  \begin{tabular}{c|c}
+    X & Class \\
+    \hline
+    \hline
+    0 & A \\
+    1 & A \\
+    2 & A \\
+    1 & A \\
+    3 & A \\
+    \hline
+    1 & B \\
+    2 & B \\
+    3 & B \\
+    4 & B \\
+    \hline
+    4 & C \\
+    6 & C \\
+    6 & C \\
+    6 & C \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsection{ex 2015-09-30}
+Answer the following questions
+\begin{enumerate}
+\item Describe (1) what are the bias, variance, and irreducible error of a model, (2) how are they related with its complexity, (3) how they are related to the expected prediction error, and (4) what is the meaning of “bias-variance tradeoff”?
+\item Draw a plot of (1) bias, (2) variance, (3) training error, (4) test error, and (5) irreducible error curves as a function of increasing amount of flexibility in a statistical learning method. Explain the reason of their shapes and highlight the relationships among them.
+\end{enumerate}
+
+\subsection{ex 2016-02-03}
+According to statistical learning theory, in regression we assume a relationship exists between an observed variable and and a dependent variable in the form 
+
+$$ Y_{i} = f(X_{i}) + \epsilon_{i}, \epsilon_{i} \sim N(o, \sigma^{2})$$
+
+\begin{enumerate}
+\item What are the \textit{two} sources of errors we have whe estimating \textit{f} from data and what are these errors due to?
+\item According to statistical learning theory, Test and Training Mean Squared Errors are related by Bias-Variance trade-off; write and comment the formula representing the Bias-Variance trade-off for the Expected Prediction Error in Regression.
+\item The previos formula does not hold for Classification, but a useful result exists for the Classification Error Rate as well. Write and comment what statistical learnig theory states about the minimal achievable average test error rate.
+\item Describe in detail how the previous result for the optimal classifier is used to derive the Logistic Regression classifier and derive the shape of the decision boundary for Logistic Regression.
+\end{enumerate}
+
+\subsection{ex 2016-02-19 Generative vs. Disciriminative models}
+A classical distinctions between classification models is the generative vs discriminative one. Answer the following about this distinction.
+
+\begin{itemize}
+\item[(a)] What are discriminative and generative models? How do they differ? Which one should be preferred and why?
+\item[(b)] Is Logistic Regression a discriminative model or a generative one? Why?
+\item[(c)] Is Linear Discriminant Analysis a discriminative model or a generative one? Why?
+\item[(d)] Is Support Vector Machines a discriminative model or a generative one? Why?
+\end{itemize}
+
+Let us consider the Support Vector Machine model for classification
+
+\begin{itemize}
+\item[(e)] What is a Support Vector Machine? How it is defined (i.e., the optimization problem it solves) and how is it trained (i.e., the optimization problem is solved to train it)? How does the solution looks like and what this has to do with the name of the model?
+\item[(f)] What is the kernel trick and how can it be applied to Support Vector Machines (i.e., what do you need to change with respect to the original algorithm)?
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\newpage
+\section{Linear regression (8 points)}
+\subsection{ex 2015-02-09}
+Given the variables x = \{1, 2, 3, 4, 5, 6, 7, 8, 9\} and y = \{3.3, 3.6, 5.2, 5.6, 7.4, 8.3, 8.7, 9.7, 11.2\}
+\begin{enumerate}
+\item Manually compute the parameters $\hat{\beta}_{0} $ and $\hat{\beta}_{1} $ of a linear model $ \hat{y} = \hat{\beta}_{0} + \hat{\beta}_{1} x$ which fits the given data
+\item What is the value of MSE calculated between the values of y and the ones returned by the $\hat{y}$ function?
+\item How can we compute if the trend identified by $\hat{\beta}_{1}$ is significant or it is just due to spurious correlations?
+\end{enumerate}
+ 
+To ease your computation, you can follow the following steps:
+\begin{itemize}
+\item calculate the mean $\bar{x}$ of x
+\item calculate the mean $\bar{y}$ of y
+\item calculate $ x - \bar{x} $ (a vector where each value is $ x_{i} - \bar{x} $̄ )
+\item calculate $ y - \bar{y} $ (as above)
+\item calculate $ \hat{\beta}_{1} = \frac{\sum_{i=1}^{n} (x_{i}-\bar{x}) (y_{i}-\bar{y})}{ \sum_{i=1}^{n} (x_{i}-\bar{x})^{2} } $
+\item calculate $ \hat{\beta}_{o} = \hat{y} - \hat{\beta}_{1} x $
+\end{itemize}
+
+\subsection{ex 2015-02-23}
+Provide detailed answers to the following
+\begin{enumerate}
+\item Let assume you have a dataset with n=1000 observations and you try to fit different
+  models on the data:
+  \begin{itemize}
+\item A linear regression model, i.e. $ Y = \beta_{0} + \beta_{1} X + \epsilon $
+\item The polynomial regression model $ Y = \beta_{0} + \beta_{1} X + \beta_{2} X^{2} + \beta_{3} X^{3} + \beta_{4} X^{4} +  \epsilon $
+\item A smoothing spline (i.e. an even more flexible model than the previous two)
+  \end{itemize}
+ For each of the three models, you calculate both training and test RSS. How would you expect the values of RSS to be (both in the training and in the test case), supposing that the true relationship between X and Y is (a) linear or (b) cubic?
+\item What is the additive assumption in a linear regression model? Show how you would detect and quantify a possible interaction between the variables in a regression model and how you would model it from a statistical perspective. Finally explain, with an example, how your model would take this interaction into account (e.g. explain how, given a change in the input, the dependent variable – and consequently the output – change).
+\end{enumerate}
+
+\subsection{ex 2015-07-06}
+Given the variables $ x_{1} $ = \{14, 1, 13, 8, 11, 19, 0, 9\}, $ x_{2} $ = \{12, 13, 7, 10, 8, 11, 16, 10\}, and $ y $ = \{26, 7, 24, 15, 24, 38, 2, 13\}, manually calculate the parameters $ \hat{\beta}_{0} $ and $ \hat{\beta}_{1} $ of the two linear functions $ \hat{y} = \beta_{0} + \beta_{1} x_{1} $ and $ \hat{y} = \beta_{0} + \beta_{1} x_{2} $ which fit the given data. To ease your calculations, take the following steps:
+\begin{enumerate}
+\item calculate the mean $ \bar{x} $ of x and the mean $ \bar{y} $ of y
+\item calculate $ x - \bar{x} $ (a vector where each value is $ x_{i} - \bar{x} $̄ ) and $ y - \bar{y} $  
+\item calculate $ \hat{\beta}_{1} = \frac{\sum_{i=1}^{n} (x_{i}-\bar{x}) (y_{i}-\bar{y})}{ \sum_{i=1}^{n} (x_{i}-\bar{x})^{2} } $, then $ \hat{\beta}_{o} = \hat{y} - \hat{\beta}_{1} x $
+\end{enumerate}
+Measure the quality of your predictions in terms of MSE, compare the results of the two
+linear regressions, and justify them.
+
+\subsection{ex 2015-09-14}
+\begin{itemize}
+\item[(a)] What is the standard error and how is it used to calculate a confidence interval? For instance, what does it mean to have a 95\% confidence interval on the parameter $ \beta_{1} $ of a linear regression?
+\item[(b)] Explain what the null hypothesis is in the context of linear regression and how it is
+verified.
+\end{itemize}
+
+\subsection{ex 2015-09-30}
+Given the following observations x = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\} and y = \{12, 11.2, 9.7, 8.7, 8.3, 7.4, 5.6, 5.2, 3.6, 3.3\}
+\begin{enumerate}
+\item Manually compute the parameters $ \hat{\beta}_{0} $ and $ \hat{\beta}_{1} $ of a linear model $ \hat{y} = \beta_{0} + \beta_{1} x $ which fits the given data
+\item What is the value of MSE calculated between the values of y and the ones returned by the $ \hat{y} $ function?
+\item Is the trend identified by $ \hat{\beta}_{1} $ significant or it is just due to spurious correlations? You have to provide supporting computations and justifications for your answer. 
+\end{enumerate}
+
+\subsection{ex 2016-02-03}
+Given the following observations x = \{45, 54, 41, 55, 52, 56, 49, 50, 46, 47\} and y = \{108, 121, 98, 124, 124, 122, 112, 114, 105, 107\}
+\begin{enumerate}
+\item Manually compute the parameters $ \hat{\beta}_{0} $ and $ \hat{\beta}_{1} $ of a linear model $ \hat{y} = \beta_{0} + \beta_{1} x $ which fits the given data
+\item What is the value of MSE calculated between the values of y and the ones returned by the $ \hat{y} $ function?
+\item Is the trend identified by $ \hat{\beta}_{1} $ significant or it is just due to spurious correlations? You have to provide supporting computations and justifications for your answer. 
+\end{enumerate}
+
+\subsection{ex 2016-02-19}
+(a) You have a dataset with n = 1000 observations and try to fit different models on the data:
+\begin{itemize}
+\item a linear regression model, i.e. $ Y = \beta_{0} + \beta_{1} X + \epsilon $
+\item the polynomial regression model, i.e. $ Y = \beta_{0} + \beta_{1} X + \beta_{2} X^{2} + \beta_{3} X^{3} + \beta_{4} X^{4} + \epsilon $
+\item a smoothing spline (i.e. an even more flexible model than the previous two)
+\end{itemize}
+
+For each of the three models, you calculate both training and test RSS. How would you expect the values of RSS to be (both in the training and in the test case), suppousing that the true relationship between X and Y is (a) linear or (b) cubic?\\
+
+(b) What is the \textit{additive assumption} in a linear regression model? Show how you would detect a possible interaction between variables and how you would model it. Finally explain, with an example, how the new model would take this interaction into account.
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\newpage
+\section{Classification (8 points)}
+\subsection{ex 2015-02-09}
+Given the two sets of samples from classes RED = \{(1, 3), (2, 2), (3.5, 1), (5, 4), (1.5, 4), (4, 2)\} and GREEN = \{(2, 3), (3, 0.5), (4, 3), (3.5, 2), (1, 2), (2, 1)\}, and the three unclassified elements a = (4, 1), b = (2, 3.5), and c = (3, 4)
+\begin{enumerate}
+\item Use the KNN approach to classify the unknown items for k = 1, 3, 5. Apply the Euclidean distance as a metric (note that you can skip the actual distance calculations if you can tell the nearest neighbours at a glance).
+\item Describe in details the Linear Discriminant Analysis and Logistic Regression techniques for classification and discuss how these techniques perform, in general, with respect to the KNN classifiers.
+\end{enumerate}
+
+\subsection{ex 2015-02-23}
+Consider the following dataset with three classes and the Linear Discriminant Analysis
+model (LDA hereafter)
+\begin{center}
+  \begin{tabular}{cc|c}
+    X1 & X2  & Class \\
+    \hline
+    \hline
+    1 & 1 & A \\
+    2 & 2 & A \\
+    2 & 3 & A \\
+    3 & 1 & A \\
+    4 & 1 & A \\
+    \hline
+    1 & 4 & B \\
+    2 & 5 & B \\
+    3 & 4 & B \\
+    4 & 5 & B \\
+    \hline
+    4 & 3 & C \\
+    6 & 1 & C \\
+    6 & 2 & C \\
+    6 & 3 & C \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Compute the parameters of a LDA classifier
+\item Compute the discriminant functions for the LDA classifier
+\item Compute the equations of the boundaries between the three classes according to
+the classifier
+\item Draw the dataset and the boundaries between the classes according to the classifier
+\item Compute the parameters in case of a Quadratic Discriminant Analysis model
+\end{enumerate}
+
+\subsection{ex 2015-07-06}
+(a) Given the subset of Iris dataset in figure, classify the three points identified with white triangles (at coordinates (5.85, 2.3), (4.7, 2.4), and (6.5, 2.5) respectively), using the KNN algorithm with k = 3, 5, 7. Note: if your point has the same amount of neighbors for each class, you can assign it the class of the closest one.\\
+
+(b) Explain what the “curse of dimensionality” is. How would you address this problem?\\
+\{PIC1\}
+
+\subsection{ex 2015-09-14}
+\begin{enumerate}
+\item[(a)] What is the difference between Discriminative and Generative methods for classification? Provide one example for each category explaining why it can be considered as Discriminative/Generative.
+\item[(b)] Provide a detailed description of the Generative method you previously introduced, the underlining model, the training algorithm, and derive the shape of its decision boundary.
+\item[(c)] Provide a detailed description of the Discriminative method you previously introduced, the underlining model, the training algorithm, and describe the shape of its decision boundary.
+\end{enumerate}
+
+\subsection{ex 2015-09-30}
+(a) Given the dataset in figure, classify the three points identified with white triangles (at coordinates (21, 5), (24, 20), and (26.5, 11.5) respectively), using the KNN algorithm with k = 2, 3, 5. Note: if your point has the same amount of neighbors for each class, you can assign it the class of the closest one.\\
+
+(b) A hospital collected data for a group of patients to study the relationship between Heart-attack Risk Index (HRI = $X_{1}$ ), weekly hours of physical activity (PHY = $X_{2}$), and the probability Y of having a heart attack. Roughly, for a heart attack probability to be low the HRI should be below 5, and the more hours one spends exercising the better it is.
+
+After fitting a logistic regression, the following coefficients were estimated: $ \hat{\beta}_{0} $ = --9.7, $ \hat{\beta}_{0} $ = 1.05, and $ \hat{\beta}_{2} $ = -- 0.29.
+\begin{itemize}
+\item  estimate the probability for a patient with HRI=5 and PHY=2 to have a heart attack;
+\item estimate how many hours of PHY a patient with HRI=7.5 should do to have that same probability.
+\end{itemize}
+\{PIC1\}
+
+\subsection{ex 2016-02-03}
+Let consider the Linear Discriminant Analysis (LDA) classifier and the following dataset:
+
+$$ x = \{ 3, -1, -4, 0, 2, 5, -1, -2, -2, -2 \}, $$
+$$ y = \{ A, B, C, A, A, B, A, B, B, C \} $$
+
+\begin{itemize}
+\item Describe the LDA model and its underlining assumptions. What is its relationship with the Bayes classifier?
+\item Derive the analytical form of the decision boundary defined by the LDA classifier in a single dimension setting
+\item Derive the analytical form of the decision boundary defined by the LDA classifier in a multidimensional setting
+\item Learn an LDA classifier from the provided dataset and compute its classification error on the training set
+\end{itemize}
+
+\subsection{ex 2016-02-19}
+In an attempt to convince students to regularly attend his classes, a professor and his TA collected data from their own students and studied the relationship between Class Hours (CH = $ X_{1} $, i.e. the total number of hours attended in class for a given subject), Study Hours (SH = $ X_{2} $, i.e. the total number of hours spent at home studying for that subject), and the probability Y of passing the final exam. Roughy, the more hours a student spends on a subject the higher the probability, but class hours tend to be worth more than the ones spent at home. After fitting a logistic regression, the following coefficients were estimated: $ \hat{\beta_{0}} = -8.75 $, $ \hat{\beta_{1}} = 0.25 $ and $ \hat{\beta_{2}} = 0.1 $.
+
+\begin{itemize}
+\item[(a)] Estimate the probability for a student with CH = 35 and SH = 20 to pass the exam
+\item[(b)] Estimate how many hours of SH a student who could attend only CH = 25 hours of classes needs to study to have that same probability to pass the exam
+\end{itemize}
+
+According to Statistical Desicion Theory, the lowest error for a classifier is the Bayes Error, i.e., the error, obtained by the Bayes Classifier, i.e., the classifier which selects the class according to 
+
+$$ \arg \max_{j} P (Y = j | X = [x_{1}, x_{2}, ..., x_{p}]) $$
+
+\begin{itemize}
+\item[(c)] Under which posterior distributions does the Logistic Regression classifier obtains the lowest average error rate in the case of (i) binary classes and in the case of (ii) multiple classes (e.g., K classes)?
+\item[(d)] What is the expected average error for the Bayes Classifier? 
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\newpage
+\section{Clustering (8 points)}
+\subsection{ex 2015-02-09}
+Suppose you want to evaluate the results of some clustering algorithms using SSE and Accuracy.
+\begin{enumerate}
+\item Which of these measures is defined as “internal”, which is “external”, and what does this mean? 
+\item After running your function, you obtain the result SSE=21.5. How can you evaluate whether this is a good or bad result? What would you compare this result with?
+\item One of the clustering algorithms allows you to choose the number of clusters in advance. You calculate SSE after different executions of this algorithm, using K=2, 3, ..., 10. SSE for K=10 provides the lowest value: what can you deduce from this?
+\item Now suppose you have ground truth for your dataset. You run two different clustering algorithms on the same data and obtain the following results:
+
+\begin{center}
+	\begin{tabular}{c|cc}
+                & SSE & Accuracy\\
+                \hline
+                Algorithm1 & 115.3 & 87\% \\
+                Algorithm2 & 1285 & 95\% \\
+	\end{tabular}
+\end{center}
+
+What is the meaning of these results? Which algorithm is better?
+\end{enumerate}
+
+\subsection{ex 2015-02-23}
+Given the two datasets shown in figure (where blue diamonds are data points and red circles different centroids starting points), calculate and show the different steps of the K-Means algorithm for both the examples in the following way:
+\begin{itemize}
+\item At each step, specify the initial positions of the centroids
+\item Without actually calculating it (unless it is needed to verify distances you cannot tell apart at a glance), for each step specify which centroid the various dataset points belong to
+\item After you have assigned data points to the different centroids, calculate their new positions and proceed to next step
+\end{itemize}
+
+Tell how many iterations the algorithm needs to converge, compare its behavior in the two cases and write a comment about it: is the final situation the one you might expect/desire? If not, explain why.\\
+
+\{PIC1 \} \{PIC2 \}
+
+\subsection{ex 2015-07-06}
+Given the following algorithms:
+\begin{enumerate}
+\item K-means
+\item Hierarchical
+\item Mixture of Gaussians
+\item DBSCAN
+\item K-medoids
+\item Fuzzy C-means
+\item Jarvis-Patrick
+\end{enumerate}
+complete the following sentences matching them with one (or more!) of the algorithms, answering the questions in parentheses and providing detailed explanations to motivate your choices. (NOTE: although sentences refer to a single algorithm, there may be more than one valid choice. In these cases, provide and motivate all of them).
+\begin{enumerate}
+\item[(a)] This algorithm relies on a “self-scaling” neighborhood (what does this mean? How can this be accomplished?)
+\item[(b)] This algorithm builds new clusters by merging or splitting existing ones (describe the differences between the two approaches and provide the computational complexity of this approach)
+\item[(c)] This algorithm provides a “soft” classification (what does this mean?)
+\item[(d)] This algorithm can provide good results even if noise is present in the dataset (is it also able to detect which points are noise?)
+\end{enumerate}
+
+\subsection{ex 2015-09-14}
+Given the dataset shown in figure, execute the steps of a hierarchical (agglomerative)
+algorithm using the single linkage technique, showing the new links you create at each
+step of the algorithm (labeling them with a number) and stopping when you obtain two
+clusters.\\
+
+\{PIC1\}\\
+
+Then, calculate and show the different steps of a K-Means algorithm run on the same dataset with the starting centroid positions $ C_{1} = (1, 1)$ and $ C_{2} $ = (5, 3.5), in the following way:
+\begin{itemize}
+\item at each step, specify the initial positions of the centroids
+\item without actually calculating it (unless it is needed to verify distances you cannot tell apart at a glance), for each step specify which centroid the various dataset points belong to
+\item after you have assigned points to the different centroids, calculate their new positions and proceed to next step
+\end{itemize}
+Are there any differences between the two algorithms? If so, how could you explain their different behavior?
+
+\subsection{ex 2015-09-30}
+a) Hierarchical clustering is not a single algorithm but rather a family of different clustering algorithms. Explain (1) how this family is composed, (2) how these algorithms work, and (3) what metrics exist to measure the distance between clusters.
+
+b) Invent a clustering problem (for example, clustering of students according to their grades, news articles according to the words they contain, or images according to their visual descriptors). Describe the problem in detail, specifying e.g. what kind of application you are doing clustering for, the dataset size and dimensionality, what problems you might have while clustering, and so on. Then choose any two of the algorithms we have studied, and try to ”sell” us one of the two, describing the characteristics of both and explaining why using one is better than the other (for instance, in terms of speed, quality of results, etc.).
+
+\subsection{ex 2016-02-03}
+From the very definition of what clustering is, we learned that the main purpose of a clustering algorithm is "to group objects in classes, so that inta-class similarity is maximized and inter-class similarity is minimized". Answer the following questions, \textit{providing examples} to support your claims.
+\begin{itemize}
+\item What is the relationship between \textit{similarity} and \textit{distance}? Is it always possible to calculate one from the other?
+\item Do all clustering algorithms just need similarities/distances to work or are there any other conditions to be met (or parameters to be specified)?
+\item The quality of a clustering algorithm is often evaluatedin terms of SSE. What is it? What value of SSE is a good value? Is this measure applicable across different datasets (i.e. is SSE = 5 on dataset A always better than SSE = 10 on dataset B)? Explain why.
+\item Suppose you run the same clustering algorithm on 1000 datasets which were randomly generated within a given interval. The 1000 SSE values you calculate fit a normal distribution with mean $ \mu $. You then run the same algorithm on a real dataset (whose data span the same interval you used to generate the random data) and get a result whose SSE is much smaller than $ \mu $. What can you conclude from this?
+\end{itemize}
+
+\subsection{ex 2016-02-19}
+Given the two figure below (where blue diamonds are points from the same dataset and red dots ones different centroids starting points), calculate and show the the different steps of the K-Means algorithm for each of the examples in the following way: 
+\begin{itemize}
+\item At each step, specify the initial positions of the centroids
+\item Without actually calculating it (unless it is needed to verify distances you cannot tell apart at a glance), for each step specify which centroid the various dataset points belong to 
+\item After you have assigned points to the different centroids, calculate their new positions and proceed to next step
+\end{itemize}
+
+\textbf{NOTE: in both figures, in (1,1), you have a diamond AND a dot!!!}\\
+
+Tell how many iterations the algorithm needs to converge, compare its behaviour in the two cases and write a comment about it: is the final situation the one you might expect/desire? if not, explain why.\\
+
+\{PIC1\} \{PIC2\}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\end{document}

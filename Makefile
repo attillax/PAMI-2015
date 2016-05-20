@@ -8,6 +8,7 @@ TEMPFILES = \
 REPORTDIR = ./Docs
 REPORT = report_hw.pdf
 EXAMS = ExamsSummary.pdf
+SOLUTIONS = ExamsSummarySolutions.pdf
 FORMULAS = FormulasSummary.pdf
 
 $(REPORTDIR)/$(REPORT): $(REPORTDIR)/$(REPORT:%.pdf=%.tex)
@@ -23,6 +24,13 @@ exams:
 	(cd $(REPORTDIR);\
 	pdflatex -interaction=nonstopmode $(EXAMS:%.pdf=%.tex);\
 	pdflatex -interaction=nonstopmode $(EXAMS:%.pdf=%.tex);\
+	rm -f $(TEMPFILES))
+
+#compiling exams summary
+exams-solutions:
+	(cd $(REPORTDIR);\
+	pdflatex -interaction=nonstopmode $(SOLUTIONS:%.pdf=%.tex);\
+	pdflatex -interaction=nonstopmode $(SOLUTIONS:%.pdf=%.tex);\
 	rm -f $(TEMPFILES))
 
 #compiling formulas summary
@@ -43,8 +51,13 @@ clean-exams:
 	rm -f $(EXAMS))
 
 #remove comliped exams summary 
+clean-exams-solutions:
+	(cd $(REPORTDIR);\
+	rm -f $(SOLUTIONS))
+
+#remove comliped exams summary 
 clean-formulas:
 	(cd $(REPORTDIR);\
 	rm -f $(FORMULAS))
 
-.PHONY: exams, formulas, clean, clean-exams, clean-formulas
+.PHONY: exams, exams-solutions, formulas, clean, clean-exams, clean-exams-solutions, clean-formulas

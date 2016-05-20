@@ -13,12 +13,17 @@ To compile the HomeWork report you will need to execute the following command:
 make
 ```
 
-To compile the summary of exams the first time you will need to execute the following command:
+To compile the summary of exams you will need to execute the following command:
 ```
 make exams
 ```
 
-To compile the summary of formulas the first time you will need to execute the following command:
+To compile the summary of exams with solutions you will need to execute the following command:
+```
+make exams-solutions
+```
+
+To compile the summary of formulas you will need to execute the following command:
 ```
 make formulas
 ```
@@ -28,12 +33,17 @@ To remove compiled report you will need to execute the following command:
 make clean
 ```
 
-To remove compiled exams summary you will need to execute the following command:
+To remove compiled summary of exams you will need to execute the following command:
 ```
 make clean-exams
 ```
 
-To remove compiled formulas summary you will need to execute the following command:
+To remove compiled summary of exams with solutions you will need to execute the following command:
+```
+make clean-exams-solutions
+```
+
+To remove compiled summary of formulas you will need to execute the following command:
 ```
 make clean-formulas
 ```
@@ -46,6 +56,11 @@ make clean && make
 If you want to recompile the summary of exams without any changes you will need to execute the following command:
 ```
 make clean-exams && make exams
+```
+
+If you want to recompile the summary of exams with solutions without any changes you will need to execute the following command:
+```
+make clean-exams-solutions && make exams-solutions
 ```
 
 If you want to recompile the summary of formulas without any changes you will need to execute the following command:
