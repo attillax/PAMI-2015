@@ -164,6 +164,23 @@ $$ Y_{i} = f(X_{i}) + \epsilon_{i}, \epsilon_{i} \sim N(o, \sigma^{2})$$
 \item Describe in detail how the previous result for the optimal classifier is used to derive the Logistic Regression classifier and derive the shape of the decision boundary for Logistic Regression.
 \end{enumerate}
 
+\subsection{ex 2016-02-19 Generative vs. Disciriminative models}
+A classical distinctions between classification models is the generative vs discriminative one. Answer the following about this distinction.
+
+\begin{itemize}
+\item[(a)] What are discriminative and generative models? How do they differ? Which one should be preferred and why?
+\item[(b)] Is Logistic Regression a discriminative model or a generative one? Why?
+\item[(c)] Is Linear Discriminant Analysis a discriminative model or a generative one? Why?
+\item[(d)] Is Support Vector Machines a discriminative model or a generative one? Why?
+\end{itemize}
+
+Let us consider the Support Vector Machine model for classification
+
+\begin{itemize}
+\item[(e)] What is a Support Vector Machine? How it is defined (i.e., the optimization problem it solves) and how is it trained (i.e., the optimization problem is solved to train it)? How does the solution looks like and what this has to do with the name of the model?
+\item[(f)] What is the kernel trick and how can it be applied to Support Vector Machines (i.e., what do you need to change with respect to the original algorithm)?
+\end{itemize}
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \newpage
 \section{Linear regression (8 points)}
@@ -231,6 +248,18 @@ Given the following observations x = \{45, 54, 41, 55, 52, 56, 49, 50, 46, 47\} 
 \item What is the value of MSE calculated between the values of y and the ones returned by the $ \hat{y} $ function?
 \item Is the trend identified by $ \hat{\beta}_{1} $ significant or it is just due to spurious correlations? You have to provide supporting computations and justifications for your answer. 
 \end{enumerate}
+
+\subsection{ex 2016-02-19}
+(a) You have a dataset with n = 1000 observations and try to fit different models on the data:
+\begin{itemize}
+\item a linear regression model, i.e. $ Y = \beta_{0} + \beta_{1} X + \epsilon $
+\item the polynomial regression model, i.e. $ Y = \beta_{0} + \beta_{1} X + \beta_{2} X^{2} + \beta_{3} X^{3} + \beta_{4} X^{4} + \epsilon $
+\item a smoothing spline (i.e. an even more flexible model than the previous two)
+\end{itemize}
+
+For each of the three models, you calculate both training and test RSS. How would you expect the values of RSS to be (both in the training and in the test case), suppousing that the true relationship between X and Y is (a) linear or (b) cubic?\\
+
+(b) What is the \textit{additive assumption} in a linear regression model? Show how you would detect a possible interaction between variables and how you would model it. Finally explain, with an example, how the new model would take this interaction into account.
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \newpage
@@ -316,6 +345,23 @@ $$ y = \{ A, B, C, A, A, B, A, B, B, C \} $$
 \item Learn an LDA classifier from the provided dataset and compute its classification error on the training set
 \end{itemize}
 
+\subsection{ex 2016-02-19}
+In an attempt to convince students to regularly attend his classes, a professor and his TA collected data from their own students and studied the relationship between Class Hours (CH = $ X_{1} $, i.e. the total number of hours attended in class for a given subject), Study Hours (SH = $ X_{2} $, i.e. the total number of hours spent at home studying for that subject), and the probability Y of passing the final exam. Roughy, the more hours a student spends on a subject the higher the probability, but class hours tend to be worth more than the ones spent at home. After fitting a logistic regression, the following coefficients were estimated: $ \hat{\beta_{0}} = -8.75 $, $ \hat{\beta_{1}} = 0.25 $ and $ \hat{\beta_{2}} = 0.1 $.
+
+\begin{itemize}
+\item[(a)] Estimate the probability for a student with CH = 35 and SH = 20 to pass the exam
+\item[(b)] Estimate how many hours of SH a student who could attend only CH = 25 hours of classes needs to study to have that same probability to pass the exam
+\end{itemize}
+
+According to Statistical Desicion Theory, the lowest error for a classifier is the Bayes Error, i.e., the error, obtained by the Bayes Classifier, i.e., the classifier which selects the class according to 
+
+$$ \arg \max_{j} P (Y = j | X = [x_{1}, x_{2}, ..., x_{p}]) $$
+
+\begin{itemize}
+\item[(c)] Under which posterior distributions does the Logistic Regression classifier obtains the lowest average error rate in the case of (i) binary classes and in the case of (ii) multiple classes (e.g., K classes)?
+\item[(d)] What is the expected average error for the Bayes Classifier? 
+\end{itemize}
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \newpage
 \section{Clustering (8 points)}
@@ -399,6 +445,20 @@ From the very definition of what clustering is, we learned that the main purpose
 \item The quality of a clustering algorithm is often evaluatedin terms of SSE. What is it? What value of SSE is a good value? Is this measure applicable across different datasets (i.e. is SSE = 5 on dataset A always better than SSE = 10 on dataset B)? Explain why.
 \item Suppose you run the same clustering algorithm on 1000 datasets which were randomly generated within a given interval. The 1000 SSE values you calculate fit a normal distribution with mean $ \mu $. You then run the same algorithm on a real dataset (whose data span the same interval you used to generate the random data) and get a result whose SSE is much smaller than $ \mu $. What can you conclude from this?
 \end{itemize}
+
+\subsection{ex 2016-02-19}
+Given the two figure below (where blue diamonds are points from the same dataset and red dots ones different centroids starting points), calculate and show the the different steps of the K-Means algorithm for each of the examples in the following way: 
+\begin{itemize}
+\item At each step, specify the initial positions of the centroids
+\item Without actually calculating it (unless it is needed to verify distances you cannot tell apart at a glance), for each step specify which centroid the various dataset points belong to 
+\item After you have assigned points to the different centroids, calculate their new positions and proceed to next step
+\end{itemize}
+
+\textbf{NOTE: in both figures, in (1,1), you have a diamond AND a dot!!!}\\
+
+Tell how many iterations the algorithm needs to converge, compare its behaviour in the two cases and write a comment about it: is the final situation the one you might expect/desire? if not, explain why.\\
+
+\{PIC1\} \{PIC2\}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \end{document}
