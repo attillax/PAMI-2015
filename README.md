@@ -24,7 +24,7 @@ All presented work is done by me.
 
 Homework sources and exams texts are provided by teachers.
 
-Original ISL and ESL books are available in the Internet for free download.
+Original [ISL](http://www.springer.com/it/book/9781461471370) and [ESL](http://www.springer.com/it/book/9780387848570) books are available in the Internet for free download.
 
 Feel free to contact me in case case of any doubts or suggestions =)
 
