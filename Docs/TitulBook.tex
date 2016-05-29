@@ -1,0 +1,79 @@
+\documentclass[a4paper,12pt,titlepage]{article} %page properties
+\usepackage{fullpage} %for fullpage
+\usepackage{graphicx} %for label
+\usepackage{tabularx} %for fullpage tables
+\usepackage{hyperref}
+
+\begin{document}
+\begin{titlepage}
+
+%defining university
+\begin{center}
+	POLITECNICO DI MILANO --- COMO CAMPUS\\
+	\vspace{10pt}
+	\includegraphics[scale=0.1]{logo-polimi.png}\\
+	\vspace{10pt}
+	PATTERN ANALYSIS AND MACHINE INTELLIGENCE 2015-2016\\
+	prof. Matteo Matteucci	
+	\line(2,0){500}
+\end{center}
+
+\vspace{40pt}
+
+%defining work type
+\begin{center}
+	{\Huge \textbf{Course book}}\\
+\end{center}
+
+\vspace{20pt}
+
+%defining project repository
+\begin{center}
+	{\large Project Repository}
+\end{center}
+\begin{tabularx}{\textwidth}{|X|}
+	\hline
+	\href{https://github.com/attillax/PAMI-2015}{Click}\\
+	\hline
+\end{tabularx}
+
+\vspace{40pt}
+
+%defining team members
+\begin{center}
+	{\large Contents:}
+\end{center}
+\begin{tabularx}{\textwidth}{|c|c|X|c|}
+	\hline
+	Book & Chapter & Title & Page \\
+	\hline
+	ISL* & 2 & Statistical learning & 2 \\
+	\hline
+	ISL & 3 & Linear regression & 33 \\
+	\hline
+	ISL & 4 & Classification & 86 \\
+	\hline
+	ESL* & 4.5 & Separating Hyperplanes & 117 \\
+	\hline
+	ISL & 6 & Linear Model Selection and Regularization & 124 \\
+	\hline
+	ISL & 9 & Support Vector Machines & 170 \\
+	\hline
+	ESL & 12.1-3 & Support Vector Machines and Flexible Discriminants & 195 \\
+	\hline
+\end{tabularx}
+
+\vspace{\fill}
+\begin{center}
+	\line(2,0){500}
+\end{center}
+
+{\small ISL* --- "An Introduction to Statistical Learning: with Applications in R" by Gareth James\\
+Selected chapters are given without labs and with conceptual exercises\\
+
+ESL* --- "The Elements of Statistical Learning" by Trevor Hastie}
+
+\end{titlepage}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\end{document}
