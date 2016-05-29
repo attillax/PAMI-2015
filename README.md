@@ -4,15 +4,19 @@ HomeWork &amp; useful materials for Pattern Analysis and Machine Intelligence co
 
 ## Repository contents
 1) Course book compilated from selected chapters of ISL and ESL.
+
 2) Sources, solutions and report for course homework.
+
 3) Summary of exam questions and answers for them.
+
 4) Summary of course topics.
-5) Makefile for provided .tex documents.
+
+5) Makefile for .tex documents.
 
 ### Folders structure
-/Docs contains all provided .tex files and .pdf for them.
+**/Docs** contains all provided .tex files and .pdf for them.
 
-/statLearningDemos contains homework sources.
+**/statLearningDemos** contains homework sources.
 
 
 ## Rights
@@ -20,7 +24,7 @@ All presented work is done by me.
 
 Homework sources and exams texts are provided by teachers.
 
-Original ISL and ESL books are available in the Internet for free download.
+Original [ISL](http://www.springer.com/it/book/9781461471370) and [ESL](http://www.springer.com/it/book/9780387848570) books are available in the Internet for free download.
 
 Feel free to contact me in case case of any doubts or suggestions =)
 
