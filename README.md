@@ -51,9 +51,9 @@ To compile the summary of exams with solutions you will need to execute the foll
 make exams-solutions
 ```
 
-To compile the summary of formulas you will need to execute the following command:
+To compile the course summary you will need to execute the following command:
 ```
-make formulas
+make course
 ```
 
 To remove compiled report you will need to execute the following command:
@@ -71,9 +71,9 @@ To remove compiled summary of exams with solutions you will need to execute the 
 make clean-exams-solutions
 ```
 
-To remove compiled summary of formulas you will need to execute the following command:
+To remove compiled course summary you will need to execute the following command:
 ```
-make clean-formulas
+make clean-course
 ```
 
 If you want to recompile the report without any changes you will need to execute the following command:
@@ -91,9 +91,9 @@ If you want to recompile the summary of exams with solutions without any changes
 make clean-exams-solutions && make exams-solutions
 ```
 
-If you want to recompile the summary of formulas without any changes you will need to execute the following command:
+If you want to recompile the course summary without any changes you will need to execute the following command:
 ```
-make clean-formulas && make formulas
+make clean-course && make course
 ```
 
 Modified TeX-file can be compiled in both ways.
