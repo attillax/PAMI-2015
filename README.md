@@ -4,7 +4,7 @@ HomeWork &amp; useful materials for Pattern Analysis and Machine Intelligence co
 
 ## Repository contents
 1) Course book compilated from selected chapters of ISL and ESL.
-(Sulutions for questions from ISL are available in the appropriate [repo](https://github.com/attillax/ISL))
+(Solutions for questions from ISL are available in the corresponding [repo](https://github.com/attillax/ISL))
 
 2) Sources, solutions and report for course homework.
 
