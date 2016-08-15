@@ -181,10 +181,22 @@ Let us consider the Support Vector Machine model for classification
 \item[(f)] What is the kernel trick and how can it be applied to Support Vector Machines (i.e., what do you need to change with respect to the original algorithm)?
 \end{itemize}
 
+\subsection{ex 2016-07-06}
+According to statistical learning theory, in regression we assume a relationship exists between an observed variable and and a dependent variable in the form 
+
+$$ Y_{i} = f(X_{i}) + \epsilon_{i}, \epsilon_{i} \sim N(o, \sigma^{2})$$
+
+\begin{enumerate}
+\item What are the \textit{two} sources of errors we have whe estimating \textit{f} from data and what are these errors due to?
+\item According to statistical learning theory, Test and Training Mean Squared Errors are related by Bias-Variance trade-off; write and comment the formula representing the Bias-Variance trade-off for the Expected Prediction Error in Regression.
+\item How is model complexity related to Bias and Variance? First provide a definition of model complexity, then according to that definition explain how bias and variance are influenced by an increased model complexity and why.
+\item Provide two different examples for $ f(X_{i}) $, describe their trade-off in terms of Bias and Variance, i.e., if one of term reduces either bias or variance with respect to the other, and explain when one should prefer one of the two models with respect to the other.
+\end{enumerate}
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \newpage
 \section{Linear regression (8 points)}
-\subsection{ex 2015-02-09}
+\subsection{ex 2015-02-09 \& ex 2016-07-06}
 Given the variables x = \{1, 2, 3, 4, 5, 6, 7, 8, 9\} and y = \{3.3, 3.6, 5.2, 5.6, 7.4, 8.3, 8.7, 9.7, 11.2\}
 \begin{enumerate}
 \item Manually compute the parameters $\hat{\beta}_{0} $ and $\hat{\beta}_{1} $ of a linear model $ \hat{y} = \hat{\beta}_{0} + \hat{\beta}_{1} x$ which fits the given data
@@ -362,6 +374,15 @@ $$ \arg \max_{j} P (Y = j | X = [x_{1}, x_{2}, ..., x_{p}]) $$
 \item[(d)] What is the expected average error for the Bayes Classifier? 
 \end{itemize}
 
+\subsection{ex 2016-07-06}
+Let's consider 4 ''classical'' classification algorithms: K-Nearest Neighbours (KNN), Logistic Regression (LR), Linear Discriminant Analysis (LDA), and Suport Vector Machines (SVM)
+\begin{enumerate}
+\item Provide a short description of each of the 4 algorithms highlighting the idea behind each of them, the basics assumptions, the complexity of the decision boundary, the learning process 
+\item When should we choose each of them?
+\item Describe what are the characteristics that could make each of the algorithms preferable to the others.
+\item Which of the four algorithms has a non-linear decision boundary? In case of linear decision boundary, how it is possible to extend the algorithm so to have a non-linear one?
+\end{enumerate}
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \newpage
 \section{Clustering (8 points)}
@@ -460,5 +481,13 @@ Tell how many iterations the algorithm needs to converge, compare its behaviour 
 
 \{PIC1\} \{PIC2\}
 
+\subsection{ex 2016-07-06}
+K-Means is a clustering algorithm that, despite some limitations, is still widely used for many applicatons.
+\begin{enumerate}
+\item Describe K-Means algorithm in details, and eloborate about its initialization, i.e., what approach would you suggest to address the fact that the result of K-Means clustering depends on the initial positions of centroids?
+\item Highlight the main advantages of using K-Means instead of another clustering algorithm (you can explicitly compare K-Means with other algorithms you choose) and suggest some applications for which you consider it better suited.
+\item What clustering algorithm would you suggest to address K-Means limit of not being able to deal with non-globular clusters? Choose one (if there are many) and motivate your answer with respect to K-Means.
+\item What approach would you suggest to address the need of knowing the number of clusters in advance in K-Means? What alternative clustering algorithm would you choose not to have the issue of selecting an initial number of clusters (discuss your answer).
+\end{enumerate}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \end{document}
