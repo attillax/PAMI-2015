@@ -41,9 +41,6 @@ int main()
   std::cout << std::endl;
   std::cout << "mean <m_x>: " << m_x << std::endl;
   std::cout << "mean <m_y>: " << m_y << std::endl;
-
-  std::cout << std::endl;
-  std::cout << "<x>" << "\t" << "<y>" << "\t" << "<x_d>" << "\t" << "<y_d>" << "\t" << "<x_d^2>"  << "\t" << "<x_d*y_d>" << std::endl;
   
   //calculating vectors
   std::vector<float> x_diff, x_diff_sq,y_diff,diff_prod;
@@ -56,24 +53,55 @@ int main()
 
     sum_diff_prod += diff_prod[i];
     sum_x_diff_sq += x_diff_sq[i];
-    
-    //print out vectors
-    std::cout << x[i] << "\t" << y[i] << "\t" << x_diff[i] << "\t" << y_diff[i] << "\t" << x_diff_sq[i] << "\t" << diff_prod[i]  << std::endl;
   }
 
-  std::cout << std::endl;
-  std::cout << "sum of <x_d^2>: " << sum_x_diff_sq << std::endl;
   std::cout << "sum of <x_d*y_d>: " << sum_diff_prod << std::endl;
+  std::cout << "sum of <x_d^2>: " << sum_x_diff_sq << std::endl;
 
   //calculaing b1
   float b1;
   b1 = sum_diff_prod / sum_x_diff_sq;
-  std::cout << std::endl;
   std::cout << "<b1>: " << b1 << std::endl;
   
   //calculating b0
-  float b0 = m_y - b1 * m_x;
+  float b0;
+  b0 = m_y - b1 * m_x;
   std::cout << "<b0>: " << b0 << std::endl;
+
+  //calculating MSE
+  float sum_yyh = 0;
+  std::vector<float> y_hat,y_y_hat;
+  for (int i = 0; i < n; i++) {
+    y_hat.push_back(b0 + b1 * x[i]);
+    y_y_hat.push_back((y[i]-y_hat[i])*(y[i]-y_hat[i]));
+    sum_yyh +=y_y_hat[i];
+  }
+
+  float mse;
+  mse = (sum_yyh / n);
+  std::cout << "<MSE>: " << mse << std::endl;
+
+  //printing out table
+  std::cout << std::endl;
+  std::cout << "<x>" << "\t";
+  std::cout << "<y>" << "\t";
+  std::cout << "<x_d>" << "\t";
+  std::cout << "<y_d>" << "\t";
+  std::cout << "<(x-xd)^2>" << "  ";
+  std::cout << "<x_d*y_d>" << "\t";
+  std::cout << "<y_h>" << "\t";
+  std::cout << "<(y-yh)^2>" << std::endl;
+  for (int i = 0; i < n; i++) {
+    std::cout << x[i] << "\t";
+    std::cout << y[i] << "\t";
+    std::cout << x_diff[i] << "\t";
+    std::cout << y_diff[i] << "\t";
+    std::cout << x_diff_sq[i] << "\t\t";
+    std::cout << diff_prod[i]  << "\t";
+    std::cout  << y_hat[i] << "\t  ";
+    std::cout << y_y_hat[i]  << std::endl;
+  }
+  
     
   return 0;
 }
