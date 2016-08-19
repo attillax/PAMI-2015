@@ -62,10 +62,13 @@ int main()
   }
 
   std::cout << std::endl;
+  std::cout << "sum of <x_d^2>: " << sum_x_diff_sq << std::endl;
+  std::cout << "sum of <x_d*y_d>: " << sum_diff_prod << std::endl;
 
   //calculaing b1
   float b1;
   b1 = sum_diff_prod / sum_x_diff_sq;
+  std::cout << std::endl;
   std::cout << "<b1>: " << b1 << std::endl;
   
   //calculating b0
