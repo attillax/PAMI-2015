@@ -87,7 +87,7 @@ int main()
   std::cout << "<y>" << "\t";
   std::cout << "<x_d>" << "\t";
   std::cout << "<y_d>" << "\t";
-  std::cout << "<(x-xd)^2>" << "  ";
+  std::cout << "<x_d^2>" << "  ";
   std::cout << "<x_d*y_d>" << "\t";
   std::cout << "<y_h>" << "\t";
   std::cout << "<(y-yh)^2>" << std::endl;
