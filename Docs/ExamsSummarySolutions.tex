@@ -217,30 +217,30 @@ To ease your computation, you can follow the following steps:
 \end{itemize}
 
 \subsubsection{solution}
-  \begin{tabular}{|c|c|c|c|c|c|}
+1)\\
+  \begin{tabular}{|c|c|c|c|c|c|c|c|}
     \hline
-    x & y & $ x - \bar{x} $ & $ y - \bar{y} $ & $ (x - \bar{x})^{2} $ & $ (x - \bar{x})(y - \bar{y}) $ \\
+    x & y & $ x - \bar{x} $ & $ y - \bar{y} $ & $ (x - \bar{x})^{2} $ & $ (x - \bar{x})(y - \bar{y}) $ & $ \hat{y} $ & $ (y - \hat{y})^2 $ \\
     \hline
-    1	& 3.3 	& -4	& -3.7	& 16	& 14.8	\\
+    1	& 3.3 	& -4	& -3.7	& 16	& 14.8	& 3.02667	& 0.0747108	\\
     \hline
-    2	& 3.6	& -3	& -3.4	& 9	& 10.2	\\
+    2	& 3.6	& -3	& -3.4	& 9	& 10.2	& 4.02  	& 0.1764	\\
     \hline
-    3	& 5.2	& -2	& -1.8	& 4	& 3.6	\\
+    3	& 5.2	& -2	& -1.8	& 4	& 3.6	& 5.01333	& 0.0348444	\\
     \hline
-    4	& 5.6	& -1	& -1.4	& 1	& 1.4	\\
+    4	& 5.6	& -1	& -1.4	& 1	& 1.4	& 6.00667	& 0.165378	\\
     \hline
-    5	& 7.4	& 0	& 0.4	& 0	& 0	\\
+    5	& 7.4	& 0	& 0.4	& 0	& 0	& 7     	& 0.16  	\\
     \hline
-    6	& 8.3	& 1	& 1.3	& 1	& 1.3	\\
+    6	& 8.3	& 1	& 1.3	& 1	& 1.3	& 7.99333	& 0.0940448	\\
     \hline
-    7	& 8.7	& 2	& 1.7	& 4	& 3.4	\\
+    7	& 8.7	& 2	& 1.7	& 4	& 3.4	& 8.98667	& 0.0821773	\\
     \hline
-    8	& 9.7	& 3	& 2.7	& 9	& 8.1	\\
+    8	& 9.7	& 3	& 2.7	& 9	& 8.1	& 9.98  	& 0.0783999	\\
     \hline
-    9	& 11.2	& 4	& 4.2	& 16	& 16.8	\\
+    9	& 11.2	& 4	& 4.2	& 16	& 16.8	& 10.9733	& 0.0513781	\\
     \hline
   \end{tabular}
-
 .\\
 
 The formula for calculating of the sample mean is $ \bar{x} = \frac{\sum_{i=1}^{n} x_{i}}{n} $, so \\
@@ -257,6 +257,10 @@ $ \hat{\beta}_{1} = \frac{\sum_{i=1}^{n} (x_{i}-\bar{x}) (y_{i}-\bar{y})}{ \sum_
 
 $ \hat{\beta}_{o} = \hat{y} - \hat{\beta}_{1} x = 7 - 0.99(3) * 5 = 2.0(3) \approx 2 $ \\
 
+2)\\
+MSE is Mean Squared error, computes by $ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_{i}-\hat{y})^{2} $\\
+
+For given data set and estimated parameters we have MSE = 0.101926, which means that we have 10\% error in our prediction.
 
 \subsection{ex 2015-02-23}
 Provide detailed answers to the following
