@@ -26,8 +26,8 @@ exams:
 	pdflatex -interaction=nonstopmode $(EXAMS:%.pdf=%.tex);\
 	rm -f $(TEMPFILES))
 
-#compiling exams summary
-exams-solutions:
+#compiling exams summary with solutions
+solutions:
 	(cd $(REPORTDIR);\
 	pdflatex -interaction=nonstopmode $(SOLUTIONS:%.pdf=%.tex);\
 	pdflatex -interaction=nonstopmode $(SOLUTIONS:%.pdf=%.tex);\
@@ -50,14 +50,14 @@ clean-exams:
 	(cd $(REPORTDIR);\
 	rm -f $(EXAMS))
 
-#remove comliped exams summary 
-clean-exams-solutions:
+#remove comliped exams summary with solutions
+clean-solutions:
 	(cd $(REPORTDIR);\
 	rm -f $(SOLUTIONS))
 
-#remove comliped exams summary 
+#remove comliped formulas summary 
 clean-course:
 	(cd $(REPORTDIR);\
 	rm -f $(COURSE))
 
-.PHONY: exams, exams-solutions, formulas, clean, clean-exams, clean-exams-solutions, clean-course
+.PHONY: exams, solutions, formulas, clean, clean-exams, clean-solutions, clean-course

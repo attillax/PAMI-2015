@@ -49,7 +49,7 @@ make exams
 
 To compile the summary of exams with solutions you will need to execute the following command:
 ```
-make exams-solutions
+make solutions
 ```
 
 To compile the course summary you will need to execute the following command:
@@ -69,7 +69,7 @@ make clean-exams
 
 To remove compiled summary of exams with solutions you will need to execute the following command:
 ```
-make clean-exams-solutions
+make clean-solutions
 ```
 
 To remove compiled course summary you will need to execute the following command:
@@ -89,7 +89,7 @@ make clean-exams && make exams
 
 If you want to recompile the summary of exams with solutions without any changes you will need to execute the following command:
 ```
-make clean-exams-solutions && make exams-solutions
+make clean-solutions && make solutions
 ```
 
 If you want to recompile the course summary without any changes you will need to execute the following command:
