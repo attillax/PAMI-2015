@@ -3,7 +3,9 @@ TEMPFILES = \
 	*.lo[g,f,t] \
 	*.out \
 	*.toc \
-	*.syntex.gz
+	*.syntex.gz \
+	*.gnuplot \
+	*.table \
 
 REPORTDIR = ./Docs
 REPORT = report_hw.pdf
@@ -29,7 +31,7 @@ exams:
 #compiling exams summary with solutions
 solutions:
 	(cd $(REPORTDIR);\
-	pdflatex -interaction=nonstopmode $(SOLUTIONS:%.pdf=%.tex);\
+	pdflatex --enable-write18 $(SOLUTIONS:%.pdf=%.tex);\
 	pdflatex -interaction=nonstopmode $(SOLUTIONS:%.pdf=%.tex);\
 	rm -f $(TEMPFILES))
 
