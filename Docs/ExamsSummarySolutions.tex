@@ -6,6 +6,7 @@
 \usepackage{longtable} %for tables on multiple pages
 \usepackage{hyperref} %for links
 \usepackage{mathtools} %for math symbols
+\usepackage{tikz} %for graphics
 
 % defining headings
 \pagestyle{fancy}
@@ -81,9 +82,48 @@
 \subsection{ex 2015-02-09}
 Answer the following questions:
 \begin{enumerate}
-\item Describe what are the bias, variance, and irreducible error of a model, how are they related with its complexity, how they are related to the expected prediction error, and what is the meaning of “bias-variance tradeoff”?
+\item Describe what are the bias, variance, and irreducible error of a model, how are they related with its complexity, how they are related to the expected prediction error, and what is the meaning of "bias-variance tradeoff"?
 \item Draw a plot of (1) bias, (2) variance, (3) training error, (4) test error, and (5) irreducible error curves as a function of increasing amount of flexibility in a statistical learning method. Explain the reason of their shapes and highlight the relationships among them.
 \end{enumerate}
+
+\subsubsection{solution:}
+
+1. Lets define decomposition of expected test MSE  as $$ E (y_{i} - \hat{f}(x_{i}))^{2} = Var(\hat{f}(x_{i})) + [Bias(\hat{f}(x_{i}))]^{2} + Var(\epsilon) $$
+
+Where: \\
+$ [Bias(\hat{f}(x_{i}))]^{2} $ is a \underline{bias} and refers to the error that is introduced by approximating a real-life problem by much simpler problem (some important unobserved predictors / influences can exist, or some features can be missed during simplification). Generally, the more flexible method we use then the less bias we have.\\
+
+$ Var(\hat{f}(x_{i})) $ is a \underline{variance} and refers to the amount by which $ \hat{f} $ would change if we estimated it using a different data set. Generally, the more flexible method we use then the higher variance we have.\\
+
+$ Var(\epsilon) $  is a \underline{irreducible error of a model} and means the variance of the error term. \\
+
+\underline{Relation with a model complexity} \\
+
+\underline{Relation to the expected prediction error} $ E (y_{i} - \hat{f}(x_{i}))^{2} $ is EPE \\
+
+\underline{Meaning of "bias-variance tradeoff"?}\\
+
+2. Explain the reason of their shapes and highlight the relationships among them.
+
+The blue line represents the bias curve (1).\\
+The orange line represents the variance curve (2).\\
+The red line represents the training error curve (3).\\
+The green line represents the test error curve (4).\\
+The horizontal grey line represents the Bayes (irreducible) error curve (5).\\
+The vertical grey line indicates the flexibility level corresponding to the smallest test MSE.	\\
+		
+\begin{tikzpicture}[domain=0:4]
+	\draw[->] (0,-2.2) -- (0,4.2) node[above] {$Values$};
+	\draw[->] (-0.2,-2) -- (4.2,-2) node[right] {$Flexibility$};
+	\draw[color=gray][-] (0,0) -- (4.2,0) node[right] {$Bayes$};
+	\draw[color=gray][-] (1.5,-2) -- (1.5,4.2) node[right] {$min test MSE$};
+	\draw[color=red] plot[id=Train] function{((1-x/2)**3)} node[right] {$Training$};
+	\draw[color=green] plot[id=Test] function{2-2*(sin(x))} node[right] {$Test$};
+	\draw[color=blue] plot[id=Bias] function{1/sqrt(x)-2.5} node[above] {$Bias$};
+	\draw[color=orange] plot[id=Variance] function{-2 + 0.05*exp(x)} node[right] {$Variance$};
+\end{tikzpicture}
+
+
 
 \subsection{ex 2015-02-23}
 In statistical learning theory, Test and Training set Mean Squared Errors are related by the so called Bias-Variance trade-off:
