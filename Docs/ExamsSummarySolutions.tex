@@ -14,65 +14,63 @@
 \fancyhead[LE,RO]{PAMI 2015-2016 \hfill EXAMS SUMMARY SOLUTIONS}
 
 \begin{document}
-	\begin{titlepage}
+    \begin{titlepage}
+
+        %defining university
+        \begin{center}
+            POLITECNICO DI MILANO --- COMO CAMPUS\\
+            \vspace{10pt}
+            \includegraphics[scale=0.1]{logo-polimi.png}\\
+            \vspace{10pt}
+            PATTERN ANALYSIS AND MACHINE INTELLIGENCE 2015-2016\\
+            prof. Matteo Matteucci	
+            \line(2,0){500}
+        \end{center}
+
+        \vspace{60pt}	
+        %defining work type
+        \begin{center}
+            {\Huge \textbf{Exams Summary}}\\
+            \vspace{20pt}
+            {\large \textbf{with solutions}}\\
+        \end{center}
 		
-		%defining university
-		\begin{center}
-			POLITECNICO DI MILANO --- COMO CAMPUS\\
-			\vspace{10pt}
-			\includegraphics[scale=0.1]{logo-polimi.png}\\
-			\vspace{10pt}
-			PATTERN ANALYSIS AND MACHINE INTELLIGENCE 2015-2016\\
-			prof. Matteo Matteucci	
-			\line(2,0){500}
-		\end{center}
+       \vspace{60pt}		
+        %defining project repository
+        \begin{center}
+            {\large Project Repository}
+        \end{center}
+        \begin{tabularx}{\textwidth}{|X|}
+            \hline
+            \href{https://github.com/attillax/PAMI-2015}{Click}\\
+            \hline
+        \end{tabularx}
+
+        \vspace{20pt}
+        %defining team members
+        \begin{center}
+            {\large Team Members}
+        \end{center}
+        \begin{tabularx}{\textwidth}{|X|X|X|}
+            \hline
+            ID & Surname & Name\\
+            \hline
+            10460625 & Golubeva & Svetlana\\
+            \hline
+            &  & \\
+            \hline
+            &  & \\
+            \hline
+            &  & \\
+            \hline
+        \end{tabularx}
+
+        \vspace{\fill}
+        \begin{center}
+            \line(2,0){500}
+        \end{center}
 		
-		\vspace{60pt}	
-		%defining work type
-		\begin{center}
-			{\Huge \textbf{Exams Summary}}\\
-			\vspace{20pt}
-			{\large \textbf{with solutions}}\\
-		\end{center}
-		
-		\vspace{60pt}
-		
-		%defining project repository
-		\begin{center}
-			{\large Project Repository}
-		\end{center}
-		\begin{tabularx}{\textwidth}{|X|}
-			\hline
-			\href{https://github.com/attillax/PAMI-2015}{Click}\\
-			\hline
-		\end{tabularx}
-		
-		\vspace{20pt}
-		
-		%defining team members
-		\begin{center}
-			{\large Team Members}
-		\end{center}
-		\begin{tabularx}{\textwidth}{|X|X|X|}
-			\hline
-			ID & Surname & Name\\
-			\hline
-			10460625 & Golubeva & Svetlana\\
-			\hline
-			&  & \\
-			\hline
-			&  & \\
-			\hline
-			&  & \\
-			\hline
-		\end{tabularx}
-		
-		\vspace{\fill}
-		\begin{center}
-			\line(2,0){500}
-		\end{center}
-		
-	\end{titlepage}
+    \end{titlepage}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \tableofcontents
 
@@ -201,7 +199,15 @@ In statistical learning theory, Test and Training set Mean Squared Errors are re
 \end{center}
 
 \subsubsection{solution:}
-d) 
+(a) The Bias-Variance trade-off for the Expected Prediction Error in Regression:\\
+
+(b) The Classification Error Rate;
+statistical learning theory states about the minimum achievable average test error rate.\\
+
+(c) Describe in detail how the previous result for the optimal classifier is used to derive Linear Discriminant Analysis (LDA) classifier providing a detailed description of the underlining model and the shape of its decision boundary (derive it from the model).\\
+
+(d.1) LDA classifier training: 
+
 \begin{center}
   \begin{tabular}{c|c||c|c|c|c}
     X & Class & $ \hat{\mu} $ & $ x - \hat{\mu} $ & $(x - \hat{\mu})^{2} $ & $ \sum{(x - \hat{\mu})^{2}} $\\
@@ -219,9 +225,9 @@ d)
     4 & B &     &  1.5 & 2.25 &   \\   
     \hline
     4 & C & 5.5 & -1.5 & 2.25 & 3 \\
-    6 & C &     &  0.5 & 0.25 &  \\
-    6 & C &     &  0.5 & 0.25 &  \\
-    6 & C &     &  0.5 & 0.25 &  \\
+    6 & C &     &  0.5 & 0.25 &   \\
+    6 & C &     &  0.5 & 0.25 &   \\
+    6 & C &     &  0.5 & 0.25 &   \\
     \hline
   \end{tabular}
 \end{center}
@@ -243,7 +249,7 @@ $$ \pi_{3} = \frac{n_{3} }{n} = \frac{4}{13} = 0.31, log(\pi_{3}) = log(\frac{4}
 
 The decision boundary for LDA classifier (discriminant function) is given by $ \hat{\delta}_{k}(x) = x \frac{\hat{\mu_{k}} }{\hat{\sigma}^{2}} - \frac{\hat{\mu_{k}}^{2} }{2\hat{\sigma}^{2} } + log(\pi_{k})$. 
 For simplicity denote $ a_{k} = \frac{\hat{\mu_{k}} }{\hat{\sigma}^{2}} $ and $ b_{k} = log(\pi_{k}) - \frac{\hat{\mu_{k}}^{2} }{2\hat{\sigma}^{2} }$. 
-So the equation takes the form $ \hat{\delta}_{k}(x) = x a_{k} + b_{k}$
+So the equation takes the form $ \hat{\delta}_{k}(x) = x a_{k} + b_{k}$\\
 
 Compute $ a_{k} = \frac{\hat{\mu_{k}} }{\hat{\sigma}^{2}} $:
 $$ a_{1} = \frac{\hat{\mu_{1}} }{\hat{\sigma}^{2}} = \frac{1.4}{1.32^{2}} = \frac{1.4}{1.74} = 0.8 $$
@@ -256,12 +262,13 @@ $$ b_{2} = log(\pi_{2}) - \frac{\hat{\mu_{2}}^{2} }{2\hat{\sigma}^{2} } = log(\f
 $$ b_{3} = log(\pi_{3}) - \frac{\hat{\mu_{3}}^{2} }{2\hat{\sigma}^{2} } = log(\frac{4}{13}) - \frac{5.5^{2}}{2*1.32^{2}} = -0.51 - \frac{30.25}{3.48} = -0.51 - 8.7 = -9.21 $$\\
 
 We get the following equations for decision boundaries:
-
 $$ \hat{\delta_{1}}(x) = 0.8 x - 0.97 $$
 $$ \hat{\delta_{2}}(x) = 1.44 x - 2.31 $$
-$$ \hat{\delta_{3}}(x) = 3.16 x - 9.21 $$
+$$ \hat{\delta_{3}}(x) = 3.16 x - 9.21 $$\\
 
-We assign an observation X = x to the class for which $ \hat{\delta}_{k}(x) $ is largest.
+We assign an observation X = x to the class for which $ \hat{\delta}_{k}(x) $ is largest.\\
+
+(d.2) The classification error (on the training data): 
 
 
 
