@@ -201,7 +201,42 @@ In statistical learning theory, Test and Training set Mean Squared Errors are re
 \end{center}
 
 \subsubsection{solution:}
+d) 
+\begin{center}
+  \begin{tabular}{c|c||c|c|c}
+    X & Class & $ \hat{\mu} $ & $ x - \hat{\mu} $ & $ \sum{(x - \hat{\mu})^{2}} $\\
+    \hline
+    \hline
+    0 & A & 3.5 & & \\
+    1 & A &     & & \\
+    2 & A &     & & \\
+    1 & A &     & & \\
+    3 & A &     & & \\
+    \hline
+    1 & B & 2.5 & & \\
+    2 & B &     & & \\
+    3 & B &     & & \\
+    4 & B &     & & \\
+    \hline
+    4 & C & 7  & & \\
+    6 & C &    & & \\
+    6 & C &    & & \\
+    6 & C &    & & \\
+    \hline
+  \end{tabular}
+\end{center}
 
+\# of classes $ K= 3$, overall \# of points $ n = 13$, \# of points in class A is $ n_{1}= 5$, \# of points in class B is $ n_{2} = 4$, \# of points in class C is $ n_{3} = 4$;
+
+Compute $ \hat{\mu} = \frac{1}{n_{k}} \sum{x} $, where $ \sum{x} $ is sum over all elements in the class and $ n_{k} $ - \# of elements in this class for each of three classes in given dataset.\\
+
+$$ \hat{\mu_{1}} = \frac{\sum{x} }{n_{1} } = \frac{0+1+2+1+3}{5} = \frac{7}{5} = 3.5 $$
+$$ \hat{\mu_{2}} = \frac{\sum{x} }{n_{2} } = \frac{1+2+3+4}{4} = \frac{10}{4} = 2.5 $$
+$$ \hat{\mu_{3}} = \frac{\sum{x} }{n_{2} } = \frac{4+6+6+6}{4} = \frac{28}{4} = 7 $$
+
+Compute a common variance $ \hat{\sigma}^{2} = \frac{1}{n-K} \sum \sum{(x - \hat{\mu})^{2}} $ \\
+
+Compute the class membership probabilities $ \pi_{k} = \frac{n_{k} }{n}$
 
 \newpage
 
