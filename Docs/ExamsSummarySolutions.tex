@@ -116,13 +116,13 @@ The vertical grey line indicates the flexibility level corresponding to the smal
 		
 \begin{tikzpicture}[domain=0:4]
 	\draw[->] (0,-2.2) -- (0,4.2) node[above] {$Values$};
-	\draw[->] (-0.2,-2) -- (4.2,-2) node[right] {$Flexibility$};
-	\draw[color=gray][-] (0,0) -- (4.2,0) node[right] {$Bayes$};
-	\draw[color=gray][-] (1.5,-2) -- (1.5,4.2) node[right] {$min test MSE$};
-	\draw[color=red] plot[id=Train] function{((1-x/2)**3)} node[right] {$Training$};
-	\draw[color=green] plot[id=Test] function{2-2*(sin(x))} node[right] {$Test$};
-	\draw[color=blue] plot[id=Bias] function{1/sqrt(x)-2.5} node[above] {$Bias$};
-	\draw[color=orange] plot[id=Variance] function{-2 + 0.05*exp(x)} node[right] {$Variance$};
+    \draw[->] (-0.2,-2) -- (4.2,-2) node[right] {$Flexibility$};
+    \draw[color=gray][-] (0,0) -- (4.2,0) node[right] {$Bayes$};
+    \draw[color=gray][-] (1.5,-2) -- (1.5,4.2) node[right] {$min test MSE$};
+    \draw[color=red] plot[id=Train] function{((1-x/2)**3)} node[right] {$Training$};
+    \draw[color=green] plot[id=Test] function{2-2*(sin(x))} node[right] {$Test$};
+    \draw[color=blue] plot[id=Bias] function{1/sqrt(x)-2.5} node[above] {$Bias$};
+    \draw[color=orange] plot[id=Variance] function{-2 + 0.05*exp(x)} node[right] {$Variance$};
 \end{tikzpicture}
 
 
@@ -148,6 +148,44 @@ Provided the previous result for Classification, answer the following questions
 \end{itemize}
 
 \subsubsection{solution:}
+
+1. Expected Prediction Error can be expressed as $$ E (y_{i} - \hat{f}(x_{i}))^{2} = Var(\hat{f}(x_{i})) + [Bias(\hat{f}(x_{i}))]^{2} + Var(\epsilon) $$
+Where: \\
+$ [Bias(\hat{f}(x_{i}))]^{2} $ is a squared \underline{bias} and refers to the error that is introduced by approximating a real-life problem by much simpler problem (some important unobserved predictors / influences can exist, or some features can be missed during simplification). Generally, the more flexible method we use then the less bias we have.\\
+
+$ Var(\hat{f}(x_{i})) $ is a \underline{variance} and refers to the amount by which $ \hat{f} $ would change if we estimated it using a different data set. Generally, the more flexible method we use then the higher variance we have.\\
+
+$ Var(\epsilon) $  is a \underline{irreducible error of a model} and means the variance of the error term. Its presence appears due to errors of measurement. In other words, it is the noise term in the true relationship that cannot fundamentally be reduced by any model. Analogous to the \underline{Bayes error rate} which is the lowest possible error rate for any classifier of a random outcome.\\
+
+
+2. In case of Classification, we can use the Classification Error Rate (also named \underline{Bayes error rate}). It is the lowest possible error rate for any classifier of a random outcome and is analogous to the irreducible error.
+
+The Bayes error rate of the data distribution is the probability an instance is misclassified by a classifier that knows the true class probabilities given the predictors. For a multiclass classifier, the Bayes error rate may be calculated as follows:
+
+$$ p = \int \limits _{x \in H_{i}} \sum _{C_{i} \neq C_{\text{max,x}}} { P(C_{i}|x)p(x)\,dx}  $$
+
+Where $ x $ is an instance, $ C_{i} $ is a class into which an instance is classified, $ H_{i} $ is the area/region that a classifier function $ h $ classifies as $ C_{i}$. 
+
+The Bayes error is non-zero if the classification labels are not deterministic (there is a non-zero probability of a given instance belonging to more than one class).\\
+
+3. \underline{Logistic Regression} is a regression model where the dependent variable is categorical (belongs to some class). 
+
+Logistic regression measures the relationship between the categorical dependent variable and one or more independent variables by estimating probabilities using a logistic function, which is the cumulative logistic distribution. Thus, it treats the same set of problems as probit regression using similar techniques, with the latter using a cumulative normal distribution curve instead. Equivalently, in the latent variable interpretations of these two methods, the first assumes a standard logistic distribution of errors and the second a standard normal distribution of errors.
+
+Logistic regression can be seen as a special case of the generalized linear model and thus analogous to linear regression. The model of logistic regression, however, is based on quite different assumptions (about the relationship between dependent and independent variables) from those of linear regression. In particular the key differences of these two models can be seen in the following two features of logistic regression. First, the conditional distribution $ y\mid x $ is a Bernoulli distribution rather than a Gaussian distribution, because the dependent variable is binary. Second, the predicted values are probabilities and are therefore restricted to (0,1) through the logistic distribution function because logistic regression predicts the probability of particular outcomes.
+
+
+
+
+provide a detailed description of the underlining model for Logistic Regression \\
+
+\underline{Decision boundary} is given by logistic function $ F(x) = \frac {1}{1+e^{-(\beta _{0}+\beta _{1}x)}} $.\\
+
+4. \underline{Linear Discriminant Analysis}
+
+provide a detailed description of the underlining model for Linear Discriminant Analysis
+
+\underline{Decision boundary} is given by .\\
 
 
 \newpage
@@ -308,6 +346,66 @@ Let us consider the Support Vector Machine model for classification
 \end{itemize}
 
 \subsubsection{solution:}
+(a) 
+\underline{Discriminative model} (conditional model) is a model used in machine learning for modeling the dependence of an unobserved variable $ y $ on an observed variable $ x $. Within a probabilistic framework, this is done by modeling the conditional probability distribution $ P ( y | x ) $, which can be used for predicting $ y $ from $ x $ .
+
+Discriminative models, as opposed to generative models, do not allow one to generate samples from the joint distribution of $ x $ and $ y $. However, for tasks such as classification and regression that do not require the joint distribution, discriminative models can yield superior performance.
+
+On the other hand, generative models are typically more flexible than discriminative models in expressing dependencies in complex learning tasks. In addition, most discriminative models are inherently supervised and cannot easily be extended to unsupervised learning. Application specific details ultimately dictate the suitability of selecting a discriminative versus generative model.
+Examples
+
+Examples of discriminative models used in machine learning include:
+
+    Linear regression
+    Logistic regression
+    Support vector machines
+    Boosting (meta-algorithm)
+    Conditional random fields
+    Neural networks
+    Random Forests
+
+
+\underline{Generative model} is a model for randomly generating observable data values, typically given some hidden parameters. It specifies a joint probability distribution over observation and label sequences. Generative models are used in machine learning for either modeling data directly (i.e., modeling observations drawn from a probability density function), or as an intermediate step to forming a conditional probability density function. A conditional distribution can be formed from a generative model through Bayes' rule.
+
+Generative models contrast with discriminative models, in that a generative model is a full probabilistic model of all variables, whereas a discriminative model provides a model only for the target variable(s) conditional on the observed variables. Thus a generative model can be used, for example, to simulate (i.e. generate) values of any variable in the model, whereas a discriminative model allows only sampling of the target variables conditional on the observed quantities. Despite the fact that discriminative models do not need to model the distribution of the observed variables, they cannot generally express more complex relationships between the observed and target variables. They don't necessarily perform better than generative models at classification and regression tasks. In modern applications the two classes are seen as complementary or as different views of the same procedure.[1]
+
+Examples of generative models include:
+
+    Gaussian mixture model and other types of mixture model
+    Hidden Markov model
+    Probabilistic context-free grammar
+    Naive Bayes
+    Averaged one-dependence estimators
+    Latent Dirichlet allocation
+    Restricted Boltzmann machine
+
+If the observed data are truly sampled from the generative model, then fitting the parameters of the generative model to maximize the data likelihood is a common method. However, since most statistical models are only approximations to the true distribution, if the model's application is to infer about a subset of variables conditional on known values of others, then it can be argued that the approximation makes more assumptions than are necessary to solve the problem at hand. In such cases, it can be more accurate to model the conditional density functions directly using a discriminative model (see above), although application-specific details will ultimately dictate which approach is most suitable in any particular case.
+
+
+\underline{Differences:}
+
+\underline{Use case:}
+
+
+(b) \underline{Logistic Regression} (LogR) is a discriminative model, because 
+
+
+(c) \underline{Linear Discriminant Analysis} (LDA) is a generative model, because
+
+
+(d) \underline{Support Vector Machines} (SVM) is a discriminative model, because 
+
+(e) \underline{Support Vector Machine} is a
+
+How it is defined (i.e., the optimization problem it solves) and 
+
+how is it trained (i.e., the optimization problem is solved to train it)? 
+
+How does the solution looks like and what this has to do with the name of the model?
+
+(f) \underline{The kernel trick} is a
+
+how can it be applied to Support Vector Machines (i.e., what do you need to change with respect to the original algorithm)?
 
 
 \newpage
